@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Hasseeb Achievers Academy</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<header class="header">
+
+<div class="logo-box">
+<img src="image/ddr2.jpg" alt="School Logo">
+
+<div>
+<h2>Hasseeb Achievers Academy</h2>
+<p>Aspiring for Excellence</p>
+</div>
+
+</div>
+
+<nav class="navbar" id="navbar">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="academics.html">Academics</a>
+<a href="admission.html">Admissions</a>
+<a href="gallery.html" class="active">Gallery</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+<div class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<div class="page-overlay"></div>
+
+<div class="page-content">
+<h1>School Gallery</h1>
+<p>
+Explore moments from school life, learning and activities.
+</p>
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Campus Life</h2>
+<p>
+A glimpse into our vibrant learning environment.
+</p>
+</div>
+
+<div class="gallery-grid">
+
+<img src="image/hb.jpg" alt="" onclick="openImage(this.src)">
+<img src="image/hb.jpg" alt="" onclick="openImage(this.src)">
+<img src="image/hb.jpg" alt="" onclick="openImage(this.src)">
+<img src="image/hb.jpg" alt="" onclick="openImage(this.src)">
+<img src="image/hb.jpg" alt="" onclick="openImage(this.src)">
+<img src="image/hb.jpg" alt="" onclick="openImage(this.src)">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EVENTS -->
+
+<section class="events-section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>School Activities</h2>
+</div>
+
+<div class="events-grid">
+
+<div class="event-card">
+<i class="fa-solid fa-trophy"></i>
+<h3>Sports Competition</h3>
+<p>
+Promoting teamwork, fitness and healthy competition.
+</p>
+</div>
+
+<div class="event-card">
+<i class="fa-solid fa-microscope"></i>
+<h3>Science Exhibition</h3>
+<p>
+Showcasing creativity and innovation.
+</p>
+</div>
+
+<div class="event-card">
+<i class="fa-solid fa-music"></i>
+<h3>Cultural Day</h3>
+<p>
+Celebrating diversity and heritage.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="close-lightbox" onclick="closeImage()">
+&times;
+</span>
+
+<img id="lightboxImg">
+
+</div>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Experience School Life With Us</h2>
+
+<p>
+Join a community that values excellence and growth.
+</p>
+
+<a href="admission.html" class="cta-btn">
+Apply Today
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+<h3>Hasseeb Achievers Academy</h3>
+<p>Aspiring for Excellence</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="academics.html">Academics</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+<div>
+<h4>Address</h4>
+<p>
+No. B.Y. 30 Kerawa Street,
+Sabon Gari, Tudun Wada,
+Kaduna, Nigeria
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Hasseeb Achievers Academy. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", () => {
+navbar.classList.toggle("show");
+});
+
+function openImage(src){
+
+document.getElementById("lightbox").style.display = "flex";
+document.getElementById("lightboxImg").src = src;
+
+}
+
+function closeImage(){
+
+document.getElementById("lightbox").style.display = "none";
+
+}
+
+</script>
+
+</body>
+</html>
