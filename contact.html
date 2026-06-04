@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Hasseeb Achievers Academy</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<header class="header">
+
+<div class="logo-box">
+<img src="image/ddr2.jpg" alt="School Logo">
+
+<div>
+<h2>Hasseeb Achievers Academy</h2>
+<p>Aspiring for Excellence</p>
+</div>
+</div>
+
+<nav class="navbar" id="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="academics.html">Academics</a>
+<a href="admission.html">Admissions</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+
+<div class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<div class="page-overlay"></div>
+
+<div class="page-content">
+<h1>Contact Us</h1>
+<p>
+We are always available to answer your questions.
+</p>
+</div>
+
+</section>
+
+<!-- CONTACT INFO -->
+
+<section class="contact-info">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Get In Touch</h2>
+<p>Reach us through any of the channels below.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<i class="fa-solid fa-location-dot"></i>
+<h3>Address</h3>
+<p>
+No. B.Y. 30 Kerawa Street,
+Sabon Gari, Tudun Wada,
+Kaduna, Nigeria
+</p>
+</div>
+
+<div class="contact-card">
+<i class="fa-solid fa-phone"></i>
+<h3>Phone</h3>
+<p>+234 XXX XXX XXXX</p>
+</div>
+
+<div class="contact-card">
+<i class="fa-solid fa-envelope"></i>
+<h3>Email</h3>
+<p>info@hasseebacademy.com</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT FORM -->
+
+<section class="contact-form-section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Send Us A Message</h2>
+</div>
+
+<form id="contactForm" class="contact-form">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="tel" placeholder="Phone Number">
+
+<input type="text" placeholder="Subject" required>
+
+<textarea rows="6" placeholder="Your Message" required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- MAP -->
+
+<section class="map-section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>School Location</h2>
+</div>
+
+<div class="map-box">
+
+<h3>Google Map Integration Coming Soon</h3>
+
+<p>
+A live Google Map will be connected when the final
+school information becomes available.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Ready To Join Our School?</h2>
+
+<p>
+Admissions are currently open.
+</p>
+
+<a href="admission.html" class="cta-btn">
+Apply Now
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+<h3>Hasseeb Achievers Academy</h3>
+<p>Aspiring for Excellence</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="academics.html">Academics</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Address</h4>
+<p>
+No. B.Y. 30 Kerawa Street,
+Sabon Gari, Tudun Wada,
+Kaduna, Nigeria
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Hasseeb Achievers Academy. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", () => {
+navbar.classList.toggle("show");
+});
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+alert("Message sent successfully! (Demo Version)");
+
+this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
