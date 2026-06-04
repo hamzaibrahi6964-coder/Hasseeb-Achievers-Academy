@@ -1202,3 +1202,92 @@ footer{
     }
 
 }
+
+/* ===================================
+   PORTAL PAGE
+=================================== */
+
+.portal-section{
+    padding:100px 0;
+}
+
+.portal-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.portal-card{
+    background:#fff;
+    padding:40px 30px;
+    text-align:center;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.portal-card:hover{
+    transform:translateY(-10px);
+}
+
+.portal-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#1565c0;
+}
+
+.portal-card i{
+    font-size:60px;
+    color:#1565c0;
+    margin-bottom:20px;
+}
+
+.portal-card h3{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+.portal-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.portal-btn{
+    display:inline-block;
+    background:#1565c0;
+    color:#fff;
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.portal-btn:hover{
+    background:#0d47a1;
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .portal-section{
+        padding:70px 0;
+    }
+
+    .portal-card{
+        padding:30px 20px;
+    }
+
+    .portal-card i{
+        font-size:50px;
+    }
+
+}
