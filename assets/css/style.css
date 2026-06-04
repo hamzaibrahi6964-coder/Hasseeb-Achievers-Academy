@@ -507,3 +507,163 @@ footer{
         font-size:1.8rem;
     }
 }
+
+/* ===================================
+   ABOUT PAGE
+=================================== */
+
+.page-hero{
+    height:60vh;
+    background:url('../../image/hb.jpg');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin-top:90px;
+}
+
+.page-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+}
+
+.page-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:800px;
+    padding:20px;
+}
+
+.page-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.page-content p{
+    font-size:1.1rem;
+}
+
+/* ABOUT SECTION */
+
+.about-section{
+    padding:100px 0;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-grid h2{
+    color:#0d47a1;
+    margin-bottom:20px;
+    font-size:2.2rem;
+}
+
+.about-grid p{
+    line-height:1.9;
+    margin-bottom:15px;
+    color:#555;
+}
+
+.about-grid img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* MISSION */
+
+.mission-section{
+    padding:100px 0;
+    background:#f5f8fc;
+}
+
+.mission-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.mission-card{
+    background:#fff;
+    padding:40px 30px;
+    text-align:center;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.mission-card:hover{
+    transform:translateY(-10px);
+}
+
+.mission-card i{
+    font-size:50px;
+    color:#1565c0;
+    margin-bottom:20px;
+}
+
+.mission-card h3{
+    margin-bottom:15px;
+    color:#0d47a1;
+}
+
+/* PRINCIPAL */
+
+.principal-section{
+    padding:100px 0;
+}
+
+.principal-card{
+    background:#fff;
+    max-width:900px;
+    margin:auto;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.principal-card p{
+    line-height:2;
+    color:#555;
+}
+
+.principal-card h4{
+    margin-top:25px;
+    color:#0d47a1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .page-content h1{
+        font-size:2.3rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .page-content h1{
+        font-size:2rem;
+    }
+
+    .principal-card{
+        padding:30px;
+    }
+
+}
