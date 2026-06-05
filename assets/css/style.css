@@ -1416,3 +1416,154 @@ footer{
     }
 
 }
+
+/* ===================================
+   STUDENT DASHBOARD
+=================================== */
+
+.dashboard-container{
+    display:flex;
+    min-height:100vh;
+    background:#f5f8fc;
+}
+
+.sidebar{
+    width:280px;
+    background:#0d47a1;
+    color:white;
+    padding:25px;
+}
+
+.sidebar-logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar-logo img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin-bottom:10px;
+}
+
+.sidebar ul li a{
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a{
+    background:rgba(255,255,255,.15);
+}
+
+.dashboard-main{
+    flex:1;
+    padding:30px;
+}
+
+.dashboard-header{
+    margin-bottom:30px;
+}
+
+.dashboard-header h2{
+    color:#0d47a1;
+}
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.dashboard-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.dashboard-card i{
+    font-size:40px;
+    color:#1565c0;
+    margin-bottom:15px;
+}
+
+.student-profile{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.profile-card,
+.profile-info{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.profile-card{
+    text-align:center;
+}
+
+.profile-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+.profile-info table{
+    width:100%;
+}
+
+.profile-info td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+.recent-section{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.activity-box{
+    background:#f5f8fc;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+@media(max-width:991px){
+
+    .dashboard-container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .student-profile{
+        grid-template-columns:1fr;
+    }
+
+}
