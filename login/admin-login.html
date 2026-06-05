@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login | Hasseeb Achievers Academy</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<section class="login-page">
+
+<div class="login-container">
+
+<div class="login-left">
+
+<img src="../image/ddr2.jpg" alt="School Logo">
+
+<h2>Hasseeb Achievers Academy</h2>
+
+<p>Aspiring for Excellence</p>
+
+<h3>Administrator Portal</h3>
+
+<p>
+Manage students, teachers, attendance, results,
+CBT examinations, gallery and school settings.
+</p>
+
+</div>
+
+<div class="login-right">
+
+<form id="adminLoginForm" class="login-form">
+
+<h2>Admin Login</h2>
+
+<div class="input-group">
+<i class="fa-solid fa-user-shield"></i>
+<input
+type="text"
+id="adminUsername"
+placeholder="Admin Username"
+required>
+</div>
+
+<div class="input-group">
+<i class="fa-solid fa-lock"></i>
+<input
+type="password"
+id="adminPassword"
+placeholder="Password"
+required>
+</div>
+
+<div class="login-options">
+
+<label>
+<input type="checkbox">
+Remember Me
+</label>
+
+<a href="#">Forgot Password?</a>
+
+</div>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("adminLoginForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const username =
+document.getElementById("adminUsername").value;
+
+const password =
+document.getElementById("adminPassword").value;
+
+/* DEMO LOGIN */
+
+if(
+username === "admin" &&
+password === "admin123"
+){
+
+alert("Login Successful");
+
+window.location.href =
+"../admin/dashboard.html";
+
+}else{
+
+alert("Invalid Login Details");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
