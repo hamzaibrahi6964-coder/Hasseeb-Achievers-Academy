@@ -1754,3 +1754,35 @@ footer{
     border-radius:10px;
     margin-top:10px;
 }
+
+/* ===================================
+   STUDENT MANAGEMENT UPGRADE
+=================================== */
+
+.student-tools{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.student-tools input{
+    flex:1;
+    min-width:250px;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.student-tools select{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.student-avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
