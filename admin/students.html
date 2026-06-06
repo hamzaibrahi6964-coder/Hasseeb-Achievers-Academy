@@ -85,15 +85,26 @@ Logout
 
 </div>
 
-<div class="search-bar">
+<div class="student-tools">
 
 <input
 type="text"
 id="searchStudent"
-placeholder="Search Student...">
+placeholder="Search by name or ID...">
+
+<select id="classFilter">
+
+<option value="all">All Classes</option>
+<option>JSS1</option>
+<option>JSS2</option>
+<option>JSS3</option>
+<option>SS1 Science</option>
+<option>SS2 Science</option>
+<option>SS3 Science</option>
+
+</select>
 
 </div>
-
 <div class="table-container">
 
 <table class="student-table">
@@ -101,6 +112,7 @@ placeholder="Search Student...">
 <thead>
 
 <tr>
+<th>Photo</th>
 <th>ID</th>
 <th>Name</th>
 <th>Class</th>
@@ -115,28 +127,37 @@ placeholder="Search Student...">
 <tbody id="studentTable">
 
 <tr>
-<td>HAA001</td>
-<td>Ahmed Musa</td>
-<td>SS2 Science</td>
-<td>Male</td>
-<td>Mr Musa</td>
+
 <td>
+<img src="../image/ddr2.jpg"
+class="student-avatar">
+</td>
+
+<td>HAA001</td>
+<td>Hamza Ibrahim</td>
 <span class="status-active">
 Active
 </span>
 </td>
 <td>
 <button class="edit-btn">Edit</button>
-<button class="delete-btn">Delete</button>
+<button
+class="delete-btn"
+onclick="deleteStudent()">
+Delete
+</button>
 </td>
 </tr>
 
 <tr>
-<td>HAA002</td>
-<td>Aisha Ibrahim</td>
-<td>JSS3</td>
-<td>Female</td>
-<td>Mrs Ibrahim</td>
+
+<td>
+<img src="../image/ddr2.jpg"
+class="student-avatar">
+</td>
+
+<td>HAA001</td>
+<td>Aisha Ali</td>
 <td>
 <span class="status-active">
 Active
@@ -166,6 +187,8 @@ Active
 
 <h3>Add Student</h3>
 
+<input type="file" accept="image/*">
+
 <input type="text" placeholder="Student Name">
 
 <input type="text" placeholder="Student ID">
@@ -179,16 +202,15 @@ Active
 
 <input type="text" placeholder="Parent Name">
 
+<input type="tel" placeholder="Parent Phone Number">
+
 <button class="save-btn">
 Save Student
 </button>
 
-<button class="close-btn"
-onclick="closeModal()">
+<button class="close-btn" onclick="closeModal()">
 Close
 </button>
-
-</div>
 
 </div>
 
@@ -206,5 +228,66 @@ document.getElementById("studentModal")
 
 </script>
 
+  <script>
+
+function openModal(){
+
+document.getElementById("studentModal")
+.style.display="flex";
+
+}
+
+function closeModal(){
+
+document.getElementById("studentModal")
+.style.display="none";
+
+}
+
+function deleteStudent(){
+
+if(confirm("Delete this student?")){
+
+alert("Student deleted (Demo)");
+
+}
+
+}
+
+const searchInput =
+document.getElementById("searchStudent");
+
+searchInput.addEventListener("keyup", function(){
+
+let filter =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll(
+"#studentTable tr"
+);
+
+rows.forEach(row => {
+
+if(
+row.innerText
+.toLowerCase()
+.includes(filter)
+){
+
+row.style.display="";
+
+}else{
+
+row.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+  
 </body>
 </html>
