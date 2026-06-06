@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Management</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg" alt="Logo">
+
+<h3>Admin Panel</h3>
+
+</div>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li class="active">
+<a href="students.html">
+<i class="fa-solid fa-user-graduate"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fa-solid fa-chalkboard-user"></i>
+Teachers
+</a>
+</li>
+
+<li>
+<a href="#">
+<i class="fa-solid fa-users"></i>
+Parents
+</a>
+</li>
+
+<li>
+<a href="../index.html">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Student Management</h2>
+
+<button class="add-btn" onclick="openModal()">
++ Add Student
+</button>
+
+</div>
+
+<div class="search-bar">
+
+<input
+type="text"
+id="searchStudent"
+placeholder="Search Student...">
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Class</th>
+<th>Gender</th>
+<th>Parent</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="studentTable">
+
+<tr>
+<td>HAA001</td>
+<td>Ahmed Musa</td>
+<td>SS2 Science</td>
+<td>Male</td>
+<td>Mr Musa</td>
+<td>
+<span class="status-active">
+Active
+</span>
+</td>
+<td>
+<button class="edit-btn">Edit</button>
+<button class="delete-btn">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>HAA002</td>
+<td>Aisha Ibrahim</td>
+<td>JSS3</td>
+<td>Female</td>
+<td>Mrs Ibrahim</td>
+<td>
+<span class="status-active">
+Active
+</span>
+</td>
+<td>
+<button class="edit-btn">Edit</button>
+<button class="delete-btn">Delete</button>
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="studentModal">
+
+<div class="modal-content">
+
+<h3>Add Student</h3>
+
+<input type="text" placeholder="Student Name">
+
+<input type="text" placeholder="Student ID">
+
+<input type="text" placeholder="Class">
+
+<select>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<input type="text" placeholder="Parent Name">
+
+<button class="save-btn">
+Save Student
+</button>
+
+<button class="close-btn"
+onclick="closeModal()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openModal(){
+document.getElementById("studentModal")
+.style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("studentModal")
+.style.display="none";
+}
+
+</script>
+
+</body>
+</html>
