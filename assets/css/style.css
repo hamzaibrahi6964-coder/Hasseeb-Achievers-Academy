@@ -2032,3 +2032,14 @@ footer{
     border-radius:20px;
     font-size:13px;
 }
+
+.cbt-actions{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.cbt-actions a{
+    text-decoration:none;
+}
