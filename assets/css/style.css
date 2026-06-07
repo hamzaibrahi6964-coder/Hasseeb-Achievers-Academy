@@ -2057,12 +2057,24 @@ footer{
     margin-bottom:12px;
 }
 
+.modal-content{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.modal-content input,
 .modal-content select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    margin-bottom:12px;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.modal-content textarea{
+    height:100px;
 }
 
 .student-table td{
