@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CBT Management</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg" alt="">
+<h3>Admin Panel</h3>
+</div>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="students.html">
+<i class="fa-solid fa-user-graduate"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="teachers.html">
+<i class="fa-solid fa-chalkboard-user"></i>
+Teachers
+</a>
+</li>
+
+<li>
+<a href="results.html">
+<i class="fa-solid fa-file-lines"></i>
+Results
+</a>
+</li>
+
+<li class="active">
+<a href="cbt.html">
+<i class="fa-solid fa-laptop"></i>
+CBT System
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>CBT Management</h2>
+
+<button class="add-btn" onclick="openExamModal()">
++ Create Exam
+</button>
+
+</div>
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-file-circle-check"></i>
+<h2>12</h2>
+<p>Total Exams</p>
+</div>
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-users"></i>
+<h2>850</h2>
+<p>Participants</p>
+</div>
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-clock"></i>
+<h2>5</h2>
+<p>Active Exams</p>
+</div>
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>Exam Title</th>
+<th>Class</th>
+<th>Subject</th>
+<th>Questions</th>
+<th>Duration</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>First Term Mathematics CBT</td>
+
+<td>SS2 Science</td>
+
+<td>Mathematics</td>
+
+<td>50</td>
+
+<td>60 Minutes</td>
+
+<td>
+<span class="status-active">
+Published
+</span>
+</td>
+
+<td>
+
+<button class="edit-btn">
+Questions
+</button>
+
+<button class="delete-btn">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CREATE EXAM MODAL -->
+
+<div class="modal" id="examModal">
+
+<div class="modal-content">
+
+<h3>Create CBT Exam</h3>
+
+<input type="text" placeholder="Exam Title">
+
+<select>
+<option>SS1 Science</option>
+<option>SS2 Science</option>
+<option>SS3 Science</option>
+</select>
+
+<select>
+<option>Mathematics</option>
+<option>English</option>
+<option>Physics</option>
+<option>Chemistry</option>
+</select>
+
+<input type="number" placeholder="Number of Questions">
+
+<input type="number" placeholder="Duration (Minutes)">
+
+<button class="save-btn">
+Create Exam
+</button>
+
+<button
+class="close-btn"
+onclick="closeExamModal()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openExamModal(){
+
+document.getElementById("examModal")
+.style.display="flex";
+
+}
+
+function closeExamModal(){
+
+document.getElementById("examModal")
+.style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
