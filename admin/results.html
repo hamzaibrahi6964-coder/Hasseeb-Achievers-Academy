@@ -101,6 +101,35 @@ Generate Result
 
 <h3>Enter Subject Scores</h3>
 
+<div class="student-result-info">
+
+<div class="info-box">
+<label>Student Name</label>
+<input type="text" value="Ahmed Musa">
+</div>
+
+<div class="info-box">
+<label>Admission No</label>
+<input type="text" value="HAA001">
+</div>
+
+<div class="info-box">
+<label>Class</label>
+<input type="text" value="SS2 Science">
+</div>
+
+<div class="info-box">
+<label>Session</label>
+<input type="text" value="2025/2026">
+</div>
+
+<div class="info-box">
+<label>Term</label>
+<input type="text" value="First Term">
+</div>
+
+</div>  
+
 <table class="result-table">
 
 <tr>
@@ -111,151 +140,110 @@ Generate Result
 <th>Test</th>
 <th>Exam</th>
 <th>Total</th>
+<th>Grade</th>
 </tr>
 
 <tr>
-
 <td>Mathematics</td>
-
-<td>
-<input type="number" class="ca1" value="9">
-</td>
-
-<td>
-<input type="number" class="ca2" value="10">
-</td>
-
-<td>
-<input type="number" class="assignment" value="9">
-</td>
-
-<td>
-<input type="number" class="test" value="16">
-</td>
-
-<td>
-<input type="number" class="exam" value="45">
-</td>
-
-<td class="subject-total">
-90
-</td>
-
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td>0</td>
+<td>A</td>
 </tr>
 
+<tr>
 <td>English</td>
-
-<td>
-<input type="number" class="ca1" value="8">
-</td>
-
-<td>
-<input type="number" class="ca2" value="9">
-</td>
-
-<td>
-<input type="number" class="assignment" value="10">
-</td>
-
-<td>
-<input type="number" class="test" value="18">
-</td>
-
-<td>
-<input type="number" class="exam" value="45">
-</td>
-
-<td class="subject-total">
-90
-</td>
-
-</tr>
-  
-<td>Physics</td>
-
-<td>
-<input type="number" class="ca1" value="8">
-</td>
-
-<td>
-<input type="number" class="ca2" value="10">
-</td>
-
-<td>
-<input type="number" class="assignment" value="8">
-</td>
-
-<td>
-<input type="number" class="test" value="17">
-</td>
-
-<td>
-<input type="number" class="exam" value="45">
-</td>
-
-<td class="subject-total">
-90
-</td>
-
-</tr>
-
-<td>Chemistry</td>
-
-<td>
-<input type="number" class="ca1" value="10">
-</td>
-
-<td>
-<input type="number" class="ca2" value="9">
-</td>
-
-<td>
-<input type="number" class="assignment" value="10">
-</td>
-
-<td>
-<input type="number" class="test" value="18">
-</td>
-
-<td>
-<input type="number" class="exam" value="35">
-</td>
-
-<td class="subject-total">
-90
-</td>
-
-</tr>
-
-<td>Biology</td>
-
-<td>
-<input type="number" class="ca1" value="7">
-</td>
-
-<td>
-<input type="number" class="ca2" value="8">
-</td>
-
-<td>
-<input type="number" class="assignment" value="9">
-</td>
-
-<td>
-<input type="number" class="test" value="15">
-</td>
-
-<td>
-<input type="number" class="exam" value="45">
-</td>
-
-<td class="subject-total">
-90
-</td>
-
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td>0</td>
+<td>A</td>
 </tr>
 
 </table>
+
+<div class="attendance-box">
+
+<div class="summary-card">
+<h4>School Opened</h4>
+<h2>90</h2>
+</div>
+
+<div class="summary-card">
+<h4>Days Present</h4>
+<h2>85</h2>
+</div>
+
+<div class="summary-card">
+<h4>Days Absent</h4>
+<h2>5</h2>
+</div>
+
+</div>
+
+<div class="remarks-section">
+
+<div class="remark-box">
+
+<label>Class Teacher Remark</label>
+
+<textarea rows="4">
+Excellent Performance
+</textarea>
+
+</div>
+
+<div class="remark-box">
+
+<label>Principal Remark</label>
+
+<textarea rows="4">
+Keep up the good work
+</textarea>
+
+</div>
+
+</div>
+
+  <div class="skills-section">
+
+<h3>Psychomotor Skills</h3>
+
+<table class="result-table">
+
+<tr>
+<th>Skill</th>
+<th>Rating</th>
+</tr>
+
+<tr>
+<td>Handwriting</td>
+<td>Excellent</td>
+</tr>
+
+<tr>
+<td>Sports</td>
+<td>Very Good</td>
+</tr>
+
+<tr>
+<td>Creativity</td>
+<td>Excellent</td>
+</tr>
+
+<tr>
+<td>Punctuality</td>
+<td>Good</td>
+</tr>
+
+</table>
+
+</div>
 
 <div class="result-summary">
 
@@ -285,6 +273,12 @@ Save Result
 </div>
 
 </div>
-
+<button
+  
+class="save-btn"
+onclick="window.print()">
+Print Result
+</button>
+  
 </body>
 </html>
