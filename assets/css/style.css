@@ -2043,3 +2043,28 @@ footer{
 .cbt-actions a{
     text-decoration:none;
 }
+
+/* ===================================
+   QUESTION BANK
+=================================== */
+
+.modal-content textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    resize:none;
+    margin-bottom:12px;
+}
+
+.modal-content select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.student-table td{
+    vertical-align:middle;
+}
