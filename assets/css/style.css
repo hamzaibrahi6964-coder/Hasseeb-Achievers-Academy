@@ -2013,3 +2013,22 @@ footer{
     }
 
 }
+
+/* ===================================
+   CBT MANAGEMENT
+=================================== */
+
+.cbt-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.exam-status{
+    background:#e8f5e9;
+    color:#2e7d32;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
