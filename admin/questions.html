@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Question Bank</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg" alt="">
+<h3>Admin Panel</h3>
+</div>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="students.html">
+<i class="fa-solid fa-user-graduate"></i>
+Students
+</a>
+</li>
+
+<li>
+<a href="teachers.html">
+<i class="fa-solid fa-chalkboard-user"></i>
+Teachers
+</a>
+</li>
+
+<li>
+<a href="results.html">
+<i class="fa-solid fa-file-lines"></i>
+Results
+</a>
+</li>
+
+<li>
+<a href="cbt.html">
+<i class="fa-solid fa-laptop"></i>
+CBT System
+</a>
+</li>
+
+<li class="active">
+<a href="questions.html">
+<i class="fa-solid fa-circle-question"></i>
+Question Bank
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Question Bank</h2>
+
+<button class="add-btn" onclick="openQuestionModal()">
++ Add Question
+</button>
+
+</div>
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-circle-question"></i>
+<h2>250</h2>
+<p>Total Questions</p>
+</div>
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-book"></i>
+<h2>12</h2>
+<p>Subjects</p>
+</div>
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-layer-group"></i>
+<h2>8</h2>
+<p>Classes</p>
+</div>
+
+</div>
+
+<div class="student-tools">
+
+<input
+type="text"
+id="questionSearch"
+placeholder="Search Questions...">
+
+<select>
+<option>All Subjects</option>
+<option>Mathematics</option>
+<option>English</option>
+<option>Physics</option>
+<option>Chemistry</option>
+</select>
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>Subject</th>
+<th>Class</th>
+<th>Question</th>
+<th>Answer</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="questionTable">
+
+<tr>
+
+<td>Mathematics</td>
+
+<td>SS2 Science</td>
+
+<td>What is 2 + 2 ?</td>
+
+<td>B</td>
+
+<td>
+
+<button class="edit-btn">
+Edit
+</button>
+
+<button
+class="delete-btn"
+onclick="deleteQuestion()">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>English</td>
+
+<td>JSS3</td>
+
+<td>Choose the correct noun.</td>
+
+<td>A</td>
+
+<td>
+
+<button class="edit-btn">
+Edit
+</button>
+
+<button
+class="delete-btn"
+onclick="deleteQuestion()">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTION MODAL -->
+
+<div class="modal" id="questionModal">
+
+<div class="modal-content">
+
+<h3>Add CBT Question</h3>
+
+<select>
+<option>Mathematics</option>
+<option>English</option>
+<option>Physics</option>
+<option>Chemistry</option>
+</select>
+
+<select>
+<option>SS1 Science</option>
+<option>SS2 Science</option>
+<option>SS3 Science</option>
+</select>
+
+<textarea
+placeholder="Enter Question"
+rows="4"></textarea>
+
+<input type="text" placeholder="Option A">
+
+<input type="text" placeholder="Option B">
+
+<input type="text" placeholder="Option C">
+
+<input type="text" placeholder="Option D">
+
+<select>
+<option>Correct Answer</option>
+<option>A</option>
+<option>B</option>
+<option>C</option>
+<option>D</option>
+</select>
+
+<button class="save-btn">
+Save Question
+</button>
+
+<button
+class="close-btn"
+onclick="closeQuestionModal()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openQuestionModal(){
+
+document.getElementById("questionModal")
+.style.display="flex";
+
+}
+
+function closeQuestionModal(){
+
+document.getElementById("questionModal")
+.style.display="none";
+
+}
+
+function deleteQuestion(){
+
+if(confirm("Delete this question?")){
+
+alert("Question deleted (Demo)");
+
+}
+
+}
+
+const search =
+document.getElementById("questionSearch");
+
+search.addEventListener("keyup", function(){
+
+let filter =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll(
+"#questionTable tr"
+);
+
+rows.forEach(row => {
+
+if(
+row.innerText
+.toLowerCase()
+.includes(filter)
+){
+
+row.style.display="";
+
+}else{
+
+row.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
