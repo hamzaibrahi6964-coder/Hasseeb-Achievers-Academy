@@ -2143,3 +2143,32 @@ footer{
     padding:6px 12px;
     border-radius:20px;
 }
+
+/* ===================================
+   PARENTS MANAGEMENT
+=================================== */
+
+.parent-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.modal-content textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    resize:none;
+    margin-bottom:12px;
+}
+
+.modal-content input,
+.modal-content select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-bottom:12px;
+}
