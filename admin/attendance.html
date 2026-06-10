@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attendance Management</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg">
+<h3>Admin Panel</h3>
+</div>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+<li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> Students</a></li>
+
+<li><a href="teachers.html"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a></li>
+
+<li><a href="parents.html"><i class="fa-solid fa-people-roof"></i> Parents</a></li>
+
+<li class="active">
+<a href="attendance.html">
+<i class="fa-solid fa-calendar-check"></i>
+Attendance
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Attendance Management</h2>
+
+<button class="add-btn">
+Mark Attendance
+</button>
+
+</div>
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+<h2>1200</h2>
+<p>Total Students</p>
+</div>
+
+<div class="teacher-stat-card">
+<h2>1120</h2>
+<p>Present Today</p>
+</div>
+
+<div class="teacher-stat-card">
+<h2>80</h2>
+<p>Absent Today</p>
+</div>
+
+</div>
+
+<div class="student-tools">
+
+<input
+type="text"
+placeholder="Search Student...">
+
+<select>
+<option>All Classes</option>
+<option>JSS1</option>
+<option>JSS2</option>
+<option>JSS3</option>
+<option>SS1</option>
+<option>SS2</option>
+<option>SS3</option>
+</select>
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>Student</th>
+<th>Class</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Ahmed Musa</td>
+
+<td>SS2 Science</td>
+
+<td>15/06/2026</td>
+
+<td>
+
+<select class="attendance-status">
+
+<option selected>
+Present
+</option>
+
+<option>
+Absent
+</option>
+
+<option>
+Late
+</option>
+
+</select>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Fatima Bello</td>
+
+<td>JSS3</td>
+
+<td>15/06/2026</td>
+
+<td>
+
+<select class="attendance-status">
+
+<option>
+Present
+</option>
+
+<option selected>
+Absent
+</option>
+
+<option>
+Late
+</option>
+
+</select>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
