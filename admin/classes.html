@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Classes Management</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg" alt="">
+<h3>Admin Panel</h3>
+</div>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+<li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> Students</a></li>
+
+<li><a href="teachers.html"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a></li>
+
+<li><a href="parents.html"><i class="fa-solid fa-people-roof"></i> Parents</a></li>
+
+<li><a href="attendance.html"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+
+<li class="active">
+<a href="classes.html">
+<i class="fa-solid fa-school"></i>
+Classes
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Classes Management</h2>
+
+<button class="add-btn" onclick="openClassModal()">
++ Add Class
+</button>
+
+</div>
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+<h2>18</h2>
+<p>Total Classes</p>
+</div>
+
+<div class="teacher-stat-card">
+<h2>1,250</h2>
+<p>Total Students</p>
+</div>
+
+<div class="teacher-stat-card">
+<h2>18</h2>
+<p>Class Teachers</p>
+</div>
+
+</div>
+
+<div class="student-tools">
+
+<input
+type="text"
+id="classSearch"
+placeholder="Search Class...">
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>Class</th>
+<th>Class Teacher</th>
+<th>Students</th>
+<th>Room</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="classTable">
+
+<tr>
+<td>JSS1 A</td>
+<td>Mr. John</td>
+<td>45</td>
+<td>Room 1</td>
+<td>
+<button class="edit-btn">Edit</button>
+<button class="delete-btn">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>SS2 Science</td>
+<td>Mrs. Aisha</td>
+<td>38</td>
+<td>Room 12</td>
+<td>
+<button class="edit-btn">Edit</button>
+<button class="delete-btn">Delete</button>
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CLASS MODAL -->
+
+<div class="modal" id="classModal">
+
+<div class="modal-content">
+
+<h3>Add New Class</h3>
+
+<input type="text" placeholder="Class Name">
+
+<select>
+<option>Select Class Teacher</option>
+<option>Mr. John</option>
+<option>Mrs. Aisha</option>
+</select>
+
+<input type="text" placeholder="Room Number">
+
+<input type="number" placeholder="Class Capacity">
+
+<button class="save-btn">
+Save Class
+</button>
+
+<button
+class="close-btn"
+onclick="closeClassModal()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openClassModal(){
+document.getElementById("classModal")
+.style.display="flex";
+}
+
+function closeClassModal(){
+document.getElementById("classModal")
+.style.display="none";
+}
+
+const search =
+document.getElementById("classSearch");
+
+search.addEventListener("keyup", function(){
+
+let filter =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll(
+"#classTable tr"
+);
+
+rows.forEach(row => {
+
+if(
+row.innerText
+.toLowerCase()
+.includes(filter)
+){
+row.style.display="";
+}else{
+row.style.display="none";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
