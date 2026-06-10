@@ -2197,3 +2197,29 @@ footer{
     text-align:center;
     box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
+
+/* ===================================
+   CLASSES MANAGEMENT
+=================================== */
+
+.class-card{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.class-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.class-badge{
+    background:#e3f2fd;
+    color:#1565c0;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
