@@ -2247,3 +2247,17 @@ footer{
     color:#cfd8dc;
     font-size:12px;
 }
+
+.sidebar-logo{
+    text-align:center;
+    padding:20px;
+}
+
+.sidebar-logo img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 10px;
+}
