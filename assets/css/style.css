@@ -2277,21 +2277,3 @@ footer{
     padding:20px;
 }
 
-.sidebar-logo img{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:10px;
-}
-
-.sidebar-logo h3{
-    color:white;
-    font-size:16px;
-    margin-bottom:5px;
-}
-
-.sidebar-logo p{
-    color:#cfd8dc;
-    font-size:12px;
-}
