@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Parents Management</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg" alt="">
+<h3>Admin Panel</h3>
+</div>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+<li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> Students</a></li>
+
+<li><a href="teachers.html"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a></li>
+
+<li><a href="results.html"><i class="fa-solid fa-file-lines"></i> Results</a></li>
+
+<li><a href="cbt.html"><i class="fa-solid fa-laptop"></i> CBT System</a></li>
+
+<li><a href="questions.html"><i class="fa-solid fa-circle-question"></i> Question Bank</a></li>
+
+<li><a href="exam-results.html"><i class="fa-solid fa-square-poll-vertical"></i> CBT Results</a></li>
+
+<li class="active">
+<a href="parents.html">
+<i class="fa-solid fa-people-roof"></i>
+Parents
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Parents Management</h2>
+
+<button class="add-btn" onclick="openParentModal()">
++ Add Parent
+</button>
+
+</div>
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-people-roof"></i>
+<h2>420</h2>
+<p>Total Parents</p>
+</div>
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-link"></i>
+<h2>390</h2>
+<p>Linked Accounts</p>
+</div>
+
+<div class="teacher-stat-card">
+<i class="fa-solid fa-user-check"></i>
+<h2>400</h2>
+<p>Active Parents</p>
+</div>
+
+</div>
+
+<div class="student-tools">
+
+<input
+type="text"
+id="parentSearch"
+placeholder="Search Parent...">
+
+<select>
+<option>All Classes</option>
+<option>JSS1</option>
+<option>JSS2</option>
+<option>JSS3</option>
+<option>SS1</option>
+<option>SS2</option>
+<option>SS3</option>
+</select>
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>Parent Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Student</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="parentTable">
+
+<tr>
+
+<td>Mr Ibrahim Musa</td>
+
+<td>08012345678</td>
+
+<td>ibrahim@gmail.com</td>
+
+<td>Ahmed Musa</td>
+
+<td>
+<span class="status-active">
+Active
+</span>
+</td>
+
+<td>
+
+<button class="edit-btn">
+Edit
+</button>
+
+<button class="delete-btn">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Mrs Aisha Bello</td>
+
+<td>08098765432</td>
+
+<td>aisha@gmail.com</td>
+
+<td>Fatima Bello</td>
+
+<td>
+<span class="status-active">
+Active
+</span>
+</td>
+
+<td>
+
+<button class="edit-btn">
+Edit
+</button>
+
+<button class="delete-btn">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ADD PARENT MODAL -->
+
+<div class="modal" id="parentModal">
+
+<div class="modal-content">
+
+<h3>Add Parent</h3>
+
+<input type="text" placeholder="Parent Full Name">
+
+<input type="text" placeholder="Phone Number">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Occupation">
+
+<textarea
+rows="4"
+placeholder="Address"></textarea>
+
+<select>
+<option>Select Student</option>
+<option>Ahmed Musa</option>
+<option>Fatima Bello</option>
+</select>
+
+<button class="save-btn">
+Save Parent
+</button>
+
+<button
+class="close-btn"
+onclick="closeParentModal()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openParentModal(){
+
+document.getElementById("parentModal")
+.style.display="flex";
+
+}
+
+function closeParentModal(){
+
+document.getElementById("parentModal")
+.style.display="none";
+
+}
+
+const search =
+document.getElementById("parentSearch");
+
+search.addEventListener("keyup", function(){
+
+let filter =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll(
+"#parentTable tr"
+);
+
+rows.forEach(row => {
+
+if(
+row.innerText
+.toLowerCase()
+.includes(filter)
+){
+
+row.style.display="";
+
+}else{
+
+row.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
