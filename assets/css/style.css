@@ -2172,3 +2172,28 @@ footer{
     border-radius:10px;
     margin-bottom:12px;
 }
+
+/* ===================================
+   ATTENDANCE MANAGEMENT
+=================================== */
+
+.attendance-status{
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:white;
+}
+
+.attendance-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.attendance-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
