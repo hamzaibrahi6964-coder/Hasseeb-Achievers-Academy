@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teacher Dashboard</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Teacher Portal</h3>
+
+</div>
+
+<ul>
+
+<li class="active">
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="attendance.html">
+<i class="fa-solid fa-calendar-check"></i>
+Attendance
+</a>
+</li>
+
+<li>
+<a href="results.html">
+<i class="fa-solid fa-file-lines"></i>
+Results
+</a>
+</li>
+
+<li>
+<a href="assignments.html">
+<i class="fa-solid fa-book"></i>
+Assignments
+</a>
+</li>
+
+<li>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i>
+Profile
+</a>
+</li>
+
+<li>
+<a href="login.html">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="dashboard-main">
+
+<div class="dashboard-header">
+
+<h2>Welcome, Mr. John</h2>
+
+<p>Teacher Dashboard Overview</p>
+
+</div>
+
+<!-- STATS -->
+
+<div class="dashboard-cards">
+
+<div class="dashboard-card">
+<i class="fa-solid fa-school"></i>
+<h3>My Classes</h3>
+<h2>4</h2>
+</div>
+
+<div class="dashboard-card">
+<i class="fa-solid fa-user-graduate"></i>
+<h3>Students</h3>
+<h2>165</h2>
+</div>
+
+<div class="dashboard-card">
+<i class="fa-solid fa-calendar-check"></i>
+<h3>Attendance Today</h3>
+<h2>92%</h2>
+</div>
+
+<div class="dashboard-card">
+<i class="fa-solid fa-book"></i>
+<h3>Assignments</h3>
+<h2>12</h2>
+</div>
+
+</div>
+
+<!-- MY CLASSES -->
+
+<div class="admin-section">
+
+<h3>My Classes</h3>
+
+<table class="admin-table">
+
+<tr>
+<th>Class</th>
+<th>Subject</th>
+<th>Students</th>
+</tr>
+
+<tr>
+<td>JSS1 A</td>
+<td>Mathematics</td>
+<td>45</td>
+</tr>
+
+<tr>
+<td>JSS2 A</td>
+<td>Mathematics</td>
+<td>40</td>
+</tr>
+
+<tr>
+<td>SS1 Science</td>
+<td>Mathematics</td>
+<td>38</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- QUICK ACTIONS -->
+
+<div class="admin-section">
+
+<h3>Quick Actions</h3>
+
+<div class="action-grid">
+
+<button onclick="location.href='attendance.html'">
+Take Attendance
+</button>
+
+<button onclick="location.href='results.html'">
+Upload Results
+</button>
+
+<button onclick="location.href='assignments.html'">
+Add Assignment
+</button>
+
+<button>
+View Students
+</button>
+
+</div>
+
+</div>
+
+<!-- RECENT ACTIVITIES -->
+
+<div class="admin-section">
+
+<h3>Recent Activities</h3>
+
+<div class="activity-box">
+Attendance submitted for JSS1 A
+</div>
+
+<div class="activity-box">
+Assignment uploaded successfully
+</div>
+
+<div class="activity-box">
+Mathematics result updated
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
