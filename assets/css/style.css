@@ -2426,3 +2426,23 @@ footer{
     padding:12px;
     border-bottom:1px solid #eee;
 }
+
+/* ===================================
+   TEACHER ATTENDANCE
+=================================== */
+
+.attendance-status{
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    width:120px;
+    background:white;
+}
+
+.table-container{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-top:20px;
+}
