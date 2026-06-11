@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teacher Attendance</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg">
+<h3>Teacher Portal</h3>
+</div>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li class="active">
+<a href="attendance.html">
+<i class="fa-solid fa-calendar-check"></i>
+Attendance
+</a>
+</li>
+
+<li>
+<a href="results.html">
+<i class="fa-solid fa-file-lines"></i>
+Results
+</a>
+</li>
+
+<li>
+<a href="assignments.html">
+<i class="fa-solid fa-book"></i>
+Assignments
+</a>
+</li>
+
+<li>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i>
+Profile
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Class Attendance</h2>
+
+<button class="save-btn"
+onclick="saveAttendance()">
+Save Attendance
+</button>
+
+</div>
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+<h2>45</h2>
+<p>Total Students</p>
+</div>
+
+<div class="teacher-stat-card">
+<h2>41</h2>
+<p>Present</p>
+</div>
+
+<div class="teacher-stat-card">
+<h2>4</h2>
+<p>Absent</p>
+</div>
+
+</div>
+
+<div class="student-tools">
+
+<select>
+<option>JSS1 A</option>
+<option>JSS2 A</option>
+<option>SS1 Science</option>
+</select>
+
+<input type="date">
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+<th>Student Name</th>
+<th>Attendance</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Ahmed Musa</td>
+<td>
+<select class="attendance-status">
+<option>Present</option>
+<option>Absent</option>
+<option>Late</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Fatima Bello</td>
+<td>
+<select class="attendance-status">
+<option>Present</option>
+<option>Absent</option>
+<option>Late</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Maryam Ibrahim</td>
+<td>
+<select class="attendance-status">
+<option>Present</option>
+<option>Absent</option>
+<option>Late</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>John Peter</td>
+<td>
+<select class="attendance-status">
+<option>Present</option>
+<option>Absent</option>
+<option>Late</option>
+</select>
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="admin-section">
+
+<h3>Attendance Summary</h3>
+
+<div class="activity-box">
+Today's attendance has not yet been submitted.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function saveAttendance(){
+
+alert("Attendance Submitted Successfully!");
+
+}
+
+</script>
+
+</body>
+</html>
