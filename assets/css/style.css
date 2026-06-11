@@ -2320,3 +2320,77 @@ footer{
     margin-bottom:15px;
     font-weight:500;
 }
+
+/* ===================================
+   TEACHER LOGIN
+=================================== */
+
+.teacher-login-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f7fc;
+}
+
+.teacher-login-card{
+    width:420px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.teacher-login-card img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+.teacher-login-card h2{
+    margin-bottom:10px;
+}
+
+.teacher-login-card p{
+    color:#666;
+}
+
+.input-group{
+    position:relative;
+    margin-top:20px;
+}
+
+.input-group i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#1565c0;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px 14px 14px 45px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.teacher-login-card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#1565c0;
+    color:white;
+    border-radius:10px;
+    margin-top:20px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.demo-account{
+    margin-top:20px;
+    font-size:14px;
+}
