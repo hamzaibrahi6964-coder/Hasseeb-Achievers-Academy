@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>School Settings</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+<img src="../image/ddr2.jpg">
+<h3>Admin Panel</h3>
+</div>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+<li><a href="students.html"><i class="fa-solid fa-user-graduate"></i> Students</a></li>
+
+<li><a href="teachers.html"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a></li>
+
+<li><a href="parents.html"><i class="fa-solid fa-people-roof"></i> Parents</a></li>
+
+<li><a href="attendance.html"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+
+<li><a href="classes.html"><i class="fa-solid fa-school"></i> Classes</a></li>
+
+<li><a href="results.html"><i class="fa-solid fa-file-lines"></i> Results</a></li>
+
+<li><a href="cbt.html"><i class="fa-solid fa-laptop"></i> CBT</a></li>
+
+<li><a href="questions.html"><i class="fa-solid fa-circle-question"></i> Question Bank</a></li>
+
+<li><a href="exam-results.html"><i class="fa-solid fa-square-poll-vertical"></i> CBT Results</a></li>
+
+<li class="active">
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>School Settings</h2>
+
+<button class="save-btn">
+Save Changes
+</button>
+
+</div>
+
+<!-- SETTINGS TABS -->
+
+<div class="settings-tabs">
+
+<button class="tab-btn active"
+onclick="showTab('school')">
+School Info
+</button>
+
+<button class="tab-btn"
+onclick="showTab('academic')">
+Academic
+</button>
+
+<button class="tab-btn"
+onclick="showTab('portal')">
+Portal
+</button>
+
+<button class="tab-btn"
+onclick="showTab('branding')">
+Branding
+</button>
+
+<button class="tab-btn"
+onclick="showTab('security')">
+Security
+</button>
+
+</div>
+
+<!-- SCHOOL INFO -->
+
+<div id="school" class="settings-content active-tab">
+
+<div class="settings-card">
+
+<h3>School Information</h3>
+
+<input type="text"
+value="Hasseeb Achievers Academy">
+
+<input type="text"
+value="Aspiring for Excellence">
+
+<input type="text"
+value="No.B.Y. 30 Kerawa Street, Kaduna">
+
+<input type="text"
+placeholder="School Phone">
+
+<input type="email"
+placeholder="School Email">
+
+<input type="text"
+placeholder="School Website">
+
+</div>
+
+</div>
+
+<!-- ACADEMIC -->
+
+<div id="academic" class="settings-content">
+
+<div class="settings-card">
+
+<h3>Academic Settings</h3>
+
+<select>
+<option>2025/2026 Session</option>
+<option>2026/2027 Session</option>
+</select>
+
+<select>
+<option>First Term</option>
+<option>Second Term</option>
+<option>Third Term</option>
+</select>
+
+<input type="number"
+value="40"
+placeholder="Pass Mark">
+
+</div>
+
+</div>
+
+<!-- PORTAL -->
+
+<div id="portal" class="settings-content">
+
+<div class="settings-card">
+
+<h3>Portal Settings</h3>
+
+<label>
+<input type="checkbox" checked>
+Student Portal Enabled
+</label>
+
+<label>
+<input type="checkbox" checked>
+Parent Portal Enabled
+</label>
+
+<label>
+<input type="checkbox" checked>
+CBT Enabled
+</label>
+
+<label>
+<input type="checkbox" checked>
+Result Checker Enabled
+</label>
+
+</div>
+
+</div>
+
+<!-- BRANDING -->
+
+<div id="branding" class="settings-content">
+
+<div class="settings-card">
+
+<h3>Branding</h3>
+
+<label>School Logo</label>
+<input type="file">
+
+<label>Background Image</label>
+<input type="file">
+
+<input type="text"
+value="Blue & White">
+
+</div>
+
+</div>
+
+<!-- SECURITY -->
+
+<div id="security" class="settings-content">
+
+<div class="settings-card">
+
+<h3>Security Settings</h3>
+
+<input type="text"
+placeholder="Admin Username">
+
+<input type="password"
+placeholder="Current Password">
+
+<input type="password"
+placeholder="New Password">
+
+<input type="password"
+placeholder="Confirm Password">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showTab(tabId){
+
+let tabs =
+document.querySelectorAll(
+".settings-content"
+);
+
+tabs.forEach(tab=>{
+tab.classList.remove("active-tab");
+});
+
+document.getElementById(tabId)
+.classList.add("active-tab");
+
+let buttons =
+document.querySelectorAll(".tab-btn");
+
+buttons.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+event.target.classList.add("active");
+
+}
+
+</script>
+
+</body>
+</html>
