@@ -3370,3 +3370,35 @@ font-weight:600;
 opacity:.9;
 
 }
+
+/* ==========================
+   PARENT ASSIGNMENTS
+========================== */
+
+.pending-badge{
+
+background:#fff3cd;
+
+color:#856404;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-weight:600;
+
+}
+
+.completed-badge{
+
+background:#d4edda;
+
+color:#155724;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-weight:600;
+
+}
