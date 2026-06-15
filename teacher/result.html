@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Teacher Results</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Teacher Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutTeacher()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Result Management</h2>
+
+<button
+class="save-btn"
+onclick="saveResults()">
+
+Save Results
+
+</button>
+
+</div>
+
+<div class="student-tools">
+
+<select>
+
+<option>JSS1 A</option>
+
+<option>JSS2 A</option>
+
+<option>SS1 Science</option>
+
+</select>
+
+<select>
+
+<option>Mathematics</option>
+
+<option>English</option>
+
+<option>Physics</option>
+
+<option>Chemistry</option>
+
+</select>
+
+<select>
+
+<option>First Term</option>
+
+<option>Second Term</option>
+
+<option>Third Term</option>
+
+</select>
+
+</div>
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>Student</th>
+
+<th>1st CA</th>
+
+<th>2nd CA</th>
+
+<th>Assignment</th>
+
+<th>Test</th>
+
+<th>Exam</th>
+
+<th>Total</th>
+
+<th>Grade</th>
+
+<th>Remark</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Hamza Musa</td>
+
+<td><input class="score" type="number" max="10"></td>
+
+<td><input class="score" type="number" max="10"></td>
+
+<td><input class="score" type="number" max="5"></td>
+
+<td><input class="score" type="number" max="15"></td>
+
+<td><input class="score" type="number" max="60"></td>
+
+<td><span class="total-score">0</span></td>
+
+<td><span class="grade">-</span></td>
+
+<td><span class="remark">-</span></td>
+
+</tr>
+
+<tr>
+
+<td>Aisha Ali</td>
+
+<td><input class="score" type="number" max="10"></td>
+
+<td><input class="score" type="number" max="10"></td>
+
+<td><input class="score" type="number" max="5"></td>
+
+<td><input class="score" type="number" max="15"></td>
+
+<td><input class="score" type="number" max="60"></td>
+
+<td><span class="total-score">0</span></td>
+
+<td><span class="grade">-</span></td>
+
+<td><span class="remark">-</span></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function saveResults(){
+
+alert(
+"Results Saved Successfully!"
+);
+
+}
+
+document
+.querySelectorAll(".score")
+
+.forEach(input=>{
+
+input.addEventListener(
+"input",
+
+function(){
+
+let row =
+
+this.closest("tr");
+
+let scores =
+
+row.querySelectorAll(
+".score"
+);
+
+let total = 0;
+
+scores.forEach(score=>{
+
+total +=
+
+Number(score.value) || 0;
+
+});
+
+row.querySelector(
+".total-score"
+)
+
+innerText = total;
+
+let grade = "";
+
+let remark = "";
+
+if(total >= 80){
+
+grade = "A";
+
+remark = "Excellent";
+
+}
+
+else if(total >= 70){
+
+grade = "B";
+
+remark = "Very Good";
+
+}
+
+else if(total >= 60){
+
+grade = "C";
+
+remark = "Good";
+
+}
+
+else if(total >= 50){
+
+grade = "D";
+
+remark = "Pass";
+
+}
+
+else if(total >= 40){
+
+grade = "E";
+
+remark = "Fair";
+
+}
+
+else{
+
+grade = "F";
+
+remark = "Fail";
+
+}
+
+row.querySelector(
+".grade"
+)
+
+.innerText = grade;
+
+row.querySelector(
+".remark"
+)
+
+.innerText = remark;
+
+});
+
+});
+
+function logoutTeacher(){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
