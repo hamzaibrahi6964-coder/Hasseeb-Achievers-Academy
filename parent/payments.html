@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Parent Payments</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Parent Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="children.html">
+
+<i class="fa-solid fa-children"></i>
+
+My Children
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="payments.html">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+Payments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutParent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>School Payments</h2>
+
+</div>
+
+<!-- STUDENT SELECTOR -->
+
+<div class="student-tools">
+
+<select>
+
+<option>Ahmed Musa</option>
+
+<option>Fatima Musa</option>
+
+</select>
+
+</div>
+
+<!-- STATISTICS -->
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+
+<h2>₦150,000</h2>
+
+<p>Total Fees</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>₦120,000</h2>
+
+<p>Paid</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>₦30,000</h2>
+
+<p>Outstanding</p>
+
+</div>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>Fee Type</th>
+
+<th>Amount</th>
+
+<th>Status</th>
+
+<th>Receipt</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>School Fees</td>
+
+<td>₦100,000</td>
+
+<td>
+
+<span class="paid-badge">
+
+Paid
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="receipt-btn">
+
+Download
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Transport Fee</td>
+
+<td>₦20,000</td>
+
+<td>
+
+<span class="paid-badge">
+
+Paid
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="receipt-btn">
+
+Download
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Examination Fee</td>
+
+<td>₦30,000</td>
+
+<td>
+
+<span class="unpaid-badge">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+-
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- NOTE -->
+
+<div class="admin-section">
+
+<h3>Payment Note</h3>
+
+<div class="activity-box">
+
+Outstanding payments should be cleared before examination week.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logoutParent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
