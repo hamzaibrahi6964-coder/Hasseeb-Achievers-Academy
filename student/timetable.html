@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Student Timetable</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Student Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-table"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cbt.html">
+
+<i class="fa-solid fa-laptop"></i>
+
+CBT Exams
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutStudent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>School Timetable</h2>
+
+</div>
+
+<!-- TODAY CARD -->
+
+<div class="admin-section">
+
+<h3>Today's Schedule</h3>
+
+<div class="activity-box">
+
+Monday • 8:00 AM - 2:00 PM
+
+</div>
+
+</div>
+
+<!-- TIMETABLE -->
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>Time</th>
+
+<th>Monday</th>
+
+<th>Tuesday</th>
+
+<th>Wednesday</th>
+
+<th>Thursday</th>
+
+<th>Friday</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>8:00 - 9:00</td>
+
+<td>Mathematics</td>
+
+<td>English</td>
+
+<td>Physics</td>
+
+<td>Biology</td>
+
+<td>Chemistry</td>
+
+</tr>
+
+<tr>
+
+<td>9:00 - 10:00</td>
+
+<td>English</td>
+
+<td>Mathematics</td>
+
+<td>Chemistry</td>
+
+<td>Physics</td>
+
+<td>Biology</td>
+
+</tr>
+
+<tr>
+
+<td>10:00 - 10:30</td>
+
+<td colspan="5">
+
+Break Time
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>10:30 - 11:30</td>
+
+<td>Biology</td>
+
+<td>Physics</td>
+
+<td>English</td>
+
+<td>Mathematics</td>
+
+<td>Civic Education</td>
+
+</tr>
+
+<tr>
+
+<td>11:30 - 12:30</td>
+
+<td>Computer</td>
+
+<td>Biology</td>
+
+<td>Mathematics</td>
+
+<td>English</td>
+
+<td>Computer</td>
+
+</tr>
+
+<tr>
+
+<td>12:30 - 1:00</td>
+
+<td colspan="5">
+
+Lunch Break
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>1:00 - 2:00</td>
+
+<td>Social Studies</td>
+
+<td>Civic Education</td>
+
+<td>Computer</td>
+
+<td>Social Studies</td>
+
+<td>Sports</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- REMINDER -->
+
+<div class="admin-section">
+
+<h3>Reminder</h3>
+
+<div class="activity-box">
+
+Always check your timetable every morning before classes begin.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logoutStudent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
