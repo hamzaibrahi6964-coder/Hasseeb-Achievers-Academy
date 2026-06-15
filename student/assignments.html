@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Student Assignments</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Student Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-table"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cbt.html">
+
+<i class="fa-solid fa-laptop"></i>
+
+CBT Exams
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutStudent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>My Assignments</h2>
+
+</div>
+
+<!-- STATS -->
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+
+<h2>12</h2>
+
+<p>Total Assignments</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>4</h2>
+
+<p>Pending</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>8</h2>
+
+<p>Completed</p>
+
+</div>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>Subject</th>
+
+<th>Title</th>
+
+<th>Due Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Mathematics</td>
+
+<td>Algebra Exercise</td>
+
+<td>20 June 2026</td>
+
+<td>
+
+<span class="pending-badge">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="download-btn">
+
+Download
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>English</td>
+
+<td>Essay Writing</td>
+
+<td>22 June 2026</td>
+
+<td>
+
+<span class="completed-badge">
+
+Completed
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="download-btn">
+
+Download
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Physics</td>
+
+<td>Motion Questions</td>
+
+<td>25 June 2026</td>
+
+<td>
+
+<span class="pending-badge">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="download-btn">
+
+Download
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- SUBMIT -->
+
+<div class="admin-section">
+
+<h3>Submit Assignment</h3>
+
+<input
+type="file"
+class="assignment-upload">
+
+<button
+class="save-btn"
+onclick="submitAssignment()">
+
+Submit Assignment
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function submitAssignment(){
+
+alert(
+
+"Assignment Submitted Successfully"
+
+);
+
+}
+
+function logoutStudent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
