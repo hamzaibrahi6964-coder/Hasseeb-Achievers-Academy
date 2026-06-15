@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Student Attendance</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Student Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-table"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cbt.html">
+
+<i class="fa-solid fa-laptop"></i>
+
+CBT Exams
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutStudent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Attendance Record</h2>
+
+</div>
+
+<!-- STATISTICS -->
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+
+<h2>92%</h2>
+
+<p>Attendance Rate</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>110</h2>
+
+<p>Present Days</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>6</h2>
+
+<p>Absent Days</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>2</h2>
+
+<p>Late Days</p>
+
+</div>
+
+</div>
+
+<!-- ATTENDANCE TABLE -->
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Day</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>15 June 2026</td>
+
+<td>Monday</td>
+
+<td>
+
+<span class="present-badge">
+
+Present
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>16 June 2026</td>
+
+<td>Tuesday</td>
+
+<td>
+
+<span class="present-badge">
+
+Present
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>17 June 2026</td>
+
+<td>Wednesday</td>
+
+<td>
+
+<span class="absent-badge">
+
+Absent
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>18 June 2026</td>
+
+<td>Thursday</td>
+
+<td>
+
+<span class="late-badge">
+
+Late
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- SUMMARY -->
+
+<div class="admin-section">
+
+<h3>Attendance Summary</h3>
+
+<div class="activity-box">
+
+Excellent attendance performance.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logoutStudent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
