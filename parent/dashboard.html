@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Parent Dashboard</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Parent Portal</h3>
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="children.html">
+
+<i class="fa-solid fa-children"></i>
+
+My Children
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="payments.html">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+Payments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutParent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="dashboard-header">
+
+<h2>Welcome Parent</h2>
+
+<p>Monitor your child's academic progress.</p>
+
+</div>
+
+<!-- STATISTICS -->
+
+<div class="dashboard-cards">
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<h3>Children</h3>
+
+<h2>2</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<h3>Attendance</h3>
+
+<h2>92%</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<h3>Results</h3>
+
+<h2>A</h2>
+
+</div>
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+<h3>Payments</h3>
+
+<h2>Paid</h2>
+
+</div>
+
+</div>
+
+<!-- QUICK VIEW -->
+
+<div class="admin-section">
+
+<h3>Recent Activities</h3>
+
+<div class="activity-box">
+
+Ahmed Musa submitted Mathematics assignment.
+
+</div>
+
+<div class="activity-box">
+
+Attendance updated for today.
+
+</div>
+
+<div class="activity-box">
+
+Second Term Results published.
+
+</div>
+
+</div>
+
+<!-- ANNOUNCEMENTS -->
+
+<div class="admin-section">
+
+<h3>School Announcements</h3>
+
+<div class="activity-box">
+
+School resumes on Monday at 8:00 AM.
+
+</div>
+
+<div class="activity-box">
+
+Inter-house sports will hold next week.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logoutParent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
