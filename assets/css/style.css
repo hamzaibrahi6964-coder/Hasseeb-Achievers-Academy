@@ -2932,3 +2932,33 @@ font-weight:700;
 background:#f5f7fa;
 
 }
+
+/* ==========================
+   STUDENT CBT
+========================== */
+
+.start-exam-btn{
+
+float:right;
+
+background:#1565c0;
+
+color:white;
+
+border:none;
+
+padding:10px 16px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.start-exam-btn:hover{
+
+opacity:.9;
+
+}
