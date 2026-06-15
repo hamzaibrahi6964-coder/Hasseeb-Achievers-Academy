@@ -2906,3 +2906,29 @@ font-weight:600;
 opacity:.9;
 
 }
+
+/* ==========================
+   STUDENT TIMETABLE
+========================== */
+
+.student-table td{
+
+text-align:center;
+
+vertical-align:middle;
+
+}
+
+.student-table th{
+
+text-align:center;
+
+}
+
+.student-table td[colspan]{
+
+font-weight:700;
+
+background:#f5f7fa;
+
+}
