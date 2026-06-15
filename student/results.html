@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Student Results</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Student Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-table"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cbt.html">
+
+<i class="fa-solid fa-laptop"></i>
+
+CBT Exams
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutStudent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>Academic Results</h2>
+
+<button
+class="download-result-btn">
+
+Download Report Card
+
+</button>
+
+</div>
+
+<!-- FILTERS -->
+
+<div class="student-tools">
+
+<select>
+
+<option>2025/2026 Session</option>
+
+<option>2026/2027 Session</option>
+
+</select>
+
+<select>
+
+<option>First Term</option>
+
+<option>Second Term</option>
+
+<option>Third Term</option>
+
+</select>
+
+</div>
+
+<!-- SUMMARY -->
+
+<div class="teacher-stats">
+
+<div class="teacher-stat-card">
+
+<h2>82%</h2>
+
+<p>Average Score</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>5th</h2>
+
+<p>Class Position</p>
+
+</div>
+
+<div class="teacher-stat-card">
+
+<h2>A</h2>
+
+<p>Overall Grade</p>
+
+</div>
+
+</div>
+
+<!-- RESULT TABLE -->
+
+<div class="table-container">
+
+<table class="student-table">
+
+<thead>
+
+<tr>
+
+<th>Subject</th>
+
+<th>Total</th>
+
+<th>Grade</th>
+
+<th>Remark</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Mathematics</td>
+
+<td>95</td>
+
+<td>A</td>
+
+<td>Excellent</td>
+
+</tr>
+
+<tr>
+
+<td>English</td>
+
+<td>82</td>
+
+<td>A</td>
+
+<td>Excellent</td>
+
+</tr>
+
+<tr>
+
+<td>Physics</td>
+
+<td>78</td>
+
+<td>B</td>
+
+<td>Very Good</td>
+
+</tr>
+
+<tr>
+
+<td>Chemistry</td>
+
+<td>74</td>
+
+<td>B</td>
+
+<td>Very Good</td>
+
+</tr>
+
+<tr>
+
+<td>Biology</td>
+
+<td>85</td>
+
+<td>A</td>
+
+<td>Excellent</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- TEACHER REMARK -->
+
+<div class="admin-section">
+
+<h3>Teacher's Remark</h3>
+
+<div class="activity-box">
+
+Excellent performance. Keep up the hard work.
+
+</div>
+
+</div>
+
+<!-- PRINCIPAL REMARK -->
+
+<div class="admin-section">
+
+<h3>Principal's Remark</h3>
+
+<div class="activity-box">
+
+Outstanding academic performance this term.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logoutStudent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
