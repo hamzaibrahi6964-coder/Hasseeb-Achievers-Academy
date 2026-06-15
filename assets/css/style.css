@@ -3296,3 +3296,49 @@ cursor:pointer;
 font-weight:600;
 
 }
+
+/* ==========================
+   PARENT ATTENDANCE
+========================== */
+
+.present-badge{
+
+background:#d4edda;
+
+color:#155724;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-weight:600;
+
+}
+
+.absent-badge{
+
+background:#f8d7da;
+
+color:#721c24;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-weight:600;
+
+}
+
+.late-badge{
+
+background:#fff3cd;
+
+color:#856404;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-weight:600;
+
+}
