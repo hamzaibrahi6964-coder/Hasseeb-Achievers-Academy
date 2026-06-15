@@ -134,7 +134,20 @@ SYSTEM
 Settings
 </a>
 </li>
+  
+<li>
 
+<a href="#"
+onclick="logoutAdmin()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+  
 </ul>
 </div>
 
@@ -269,5 +282,27 @@ Teacher Attendance Updated
 
 </div>
 
+<script>
+
+function logoutAdmin(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+  
 </body>
 </html>
