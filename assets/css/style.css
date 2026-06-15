@@ -2734,3 +2734,85 @@ border-radius:20px;
 font-weight:600;
 
 }
+
+/* ==========================
+   STUDENT PROFILE
+========================== */
+
+.profile-card{
+
+background:#fff;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+display:flex;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
+
+.profile-image{
+
+width:250px;
+
+text-align:center;
+
+}
+
+.profile-image img{
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #1565c0;
+
+margin-bottom:20px;
+
+}
+
+.profile-form{
+
+flex:1;
+
+}
+
+.profile-form input{
+
+width:100%;
+
+padding:12px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+margin-bottom:15px;
+
+}
+
+@media(max-width:768px){
+
+.profile-card{
+
+flex-direction:column;
+
+}
+
+.profile-image{
+
+width:100%;
+
+}
+
+}
