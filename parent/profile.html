@@ -1,1 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Parent Profile</title>
+
+<link rel="stylesheet"
+href="../assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="../image/ddr2.jpg">
+
+<h3>Parent Portal</h3>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="children.html">
+
+<i class="fa-solid fa-children"></i>
+
+My Children
+
+</a>
+
+</li>
+
+<li>
+
+<a href="attendance.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+</li>
+
+<li>
+
+<a href="results.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Results
+
+</a>
+
+</li>
+
+<li>
+
+<a href="assignments.html">
+
+<i class="fa-solid fa-book"></i>
+
+Assignments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="payments.html">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+Payments
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+onclick="logoutParent()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="dashboard-main">
+
+<div class="page-header">
+
+<h2>My Profile</h2>
+
+<button
+class="save-btn"
+onclick="saveProfile()">
+
+Save Changes
+
+</button>
+
+</div>
+
+<div class="profile-card">
+
+<div class="profile-image">
+
+<img
+src="../image/ddr2.jpg"
+id="previewImage">
+
+<input
+type="file"
+id="parentPhoto"
+onchange="previewPhoto(event)">
+
+</div>
+
+<div class="profile-form">
+
+<input
+type="text"
+value="Mr Ibrahim Hamza"
+placeholder="Full Name">
+
+<input
+type="email"
+value="parent@school.com"
+placeholder="Email">
+
+<input
+type="text"
+value="08012345678"
+placeholder="Phone Number">
+
+<input
+type="text"
+value="Kaduna, Nigeria"
+placeholder="Address">
+
+<hr>
+
+<h3>Emergency Contact</h3>
+
+<input
+type="text"
+value="Mrs Amina Ibrahim"
+placeholder="Contact Name">
+
+<input
+type="text"
+value="08098765432"
+placeholder="Emergency Number">
+
+<hr>
+
+<h3>Change Password</h3>
+
+<input
+type="password"
+placeholder="Current Password">
+
+<input
+type="password"
+placeholder="New Password">
+
+<input
+type="password"
+placeholder="Confirm Password">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function saveProfile(){
+
+alert(
+
+"Profile Updated Successfully"
+
+);
+
+}
+
+function previewPhoto(event){
+
+let image =
+
+document.getElementById(
+
+"previewImage"
+
+);
+
+image.src =
+
+URL.createObjectURL(
+
+event.target.files[0]
+
+);
+
+}
+
+function logoutParent(){
+
+let answer = confirm(
+
+"Are you sure you want to logout?"
+
+);
+
+if(answer){
+
+window.location.href =
+
+"../portal.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
