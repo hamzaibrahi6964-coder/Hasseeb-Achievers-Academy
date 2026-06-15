@@ -2640,3 +2640,51 @@ width:100%;
 }
 
 }
+
+/* ==========================
+   TEACHER RESULT SYSTEM
+========================== */
+
+.score{
+
+width:65px;
+
+padding:8px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+text-align:center;
+
+}
+
+.total-score{
+
+font-weight:700;
+
+font-size:18px;
+
+color:#1565c0;
+
+}
+
+.grade{
+
+background:#1565c0;
+
+color:white;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-weight:700;
+
+}
+
+.remark{
+
+font-weight:600;
+
+}
