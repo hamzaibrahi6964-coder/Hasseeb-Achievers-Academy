@@ -145,84 +145,6 @@ placeholder="Search Teacher...">
 
 <tbody id="teacherTable">
 
-<tr>
-
-<td>
-<img src="../image/ddr2.jpg"
-class="student-avatar">
-</td>
-
-<td>TCH001</td>
-
-<td>Mr John David</td>
-
-<td>Mathematics</td>
-
-<td>08012345678</td>
-
-<td>john@email.com</td>
-
-<td>
-<span class="status-active">
-Active
-</span>
-</td>
-
-<td>
-
-<button class="edit-btn">
-Edit
-</button>
-
-<button
-class="delete-btn"
-onclick="deleteTeacher()">
-Delete
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-<img src="../image/ddr2.jpg"
-class="student-avatar">
-</td>
-
-<td>TCH002</td>
-
-<td>Mrs Amina Yusuf</td>
-
-<td>English</td>
-
-<td>08098765432</td>
-
-<td>amina@email.com</td>
-
-<td>
-<span class="status-active">
-Active
-</span>
-</td>
-
-<td>
-
-<button class="edit-btn">
-Edit
-</button>
-
-<button
-class="delete-btn"
-onclick="deleteTeacher()">
-Delete
-</button>
-
-</td>
-
-</tr>
-
 </tbody>
 
 </table>
@@ -241,34 +163,54 @@ Delete
 
 <h3>Add Teacher</h3>
 
-<input type="file">
+<input
+type="file"
+id="teacherPhoto">
 
-<input type="text"
+<input
+type="text"
+id="teacherName"
 placeholder="Teacher Name">
 
-<input type="text"
+<input
+type="text"
+id="teacherId"
 placeholder="Teacher ID">
 
-<input type="text"
+<input
+type="text"
+id="teacherSubject"
 placeholder="Subject">
 
-<input type="tel"
+<input
+type="tel"
+id="teacherPhone"
 placeholder="Phone Number">
 
-<input type="email"
+<input
+type="email"
+id="teacherEmail"
 placeholder="Email Address">
 
-<input type="text"
+<input
+type="text"
+id="teacherQualification"
 placeholder="Qualification">
 
-<button class="save-btn">
+<button
+id="saveTeacherBtn"
+class="save-btn">
+
 Save Teacher
+
 </button>
 
 <button
 class="close-btn"
 onclick="closeTeacherModal()">
+
 Close
+
 </button>
 
 </div>
