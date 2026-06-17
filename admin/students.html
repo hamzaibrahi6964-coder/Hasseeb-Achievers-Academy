@@ -345,6 +345,116 @@ row.style.display="none";
 });
 
 </script>
+
+<script type="module">
+
+import {
+
+addStudent
+
+}
+
+from "../firebase/students.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveStudentBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const student = {
+
+name:
+
+document.getElementById(
+
+"studentName"
+
+).value,
+
+studentId:
+
+document.getElementById(
+
+"studentId"
+
+).value,
+
+class:
+
+document.getElementById(
+
+"studentClass"
+
+).value,
+
+gender:
+
+document.getElementById(
+
+"studentGender"
+
+).value,
+
+parent:
+
+document.getElementById(
+
+"parentName"
+
+).value,
+
+parentPhone:
+
+document.getElementById(
+
+"parentPhone"
+
+).value,
+
+status:
+
+"Active"
+
+};
+
+const success =
+
+await addStudent(student);
+
+if(success){
+
+alert(
+
+"Student added successfully"
+
+);
+
+closeModal();
+
+}
+
+else{
+
+alert(
+
+"Unable to save student"
+
+);
+
+}
+
+});
+
+</script>
   
 </body>
 </html>
