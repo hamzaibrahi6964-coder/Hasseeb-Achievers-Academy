@@ -124,66 +124,6 @@ placeholder="Search Parent...">
 
 <tbody id="parentTable">
 
-<tr>
-
-<td>Mr Ibrahim Musa</td>
-
-<td>08012345678</td>
-
-<td>ibrahim@gmail.com</td>
-
-<td>Ahmed Musa</td>
-
-<td>
-<span class="status-active">
-Active
-</span>
-</td>
-
-<td>
-
-<button class="edit-btn">
-Edit
-</button>
-
-<button class="delete-btn">
-Delete
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Mrs Aisha Bello</td>
-
-<td>08098765432</td>
-
-<td>aisha@gmail.com</td>
-
-<td>Fatima Bello</td>
-
-<td>
-<span class="status-active">
-Active
-</span>
-</td>
-
-<td>
-
-<button class="edit-btn">
-Edit
-</button>
-
-<button class="delete-btn">
-Delete
-</button>
-
-</td>
-
-</tr>
-
 </tbody>
 
 </table>
@@ -202,32 +142,76 @@ Delete
 
 <h3>Add Parent</h3>
 
-<input type="text" placeholder="Parent Full Name">
+<input
+type="text"
+id="parentName"
+placeholder="Parent Full Name">
 
-<input type="text" placeholder="Phone Number">
+<input
+type="text"
+id="parentPhone"
+placeholder="Phone Number">
 
-<input type="email" placeholder="Email Address">
+<input
+type="email"
+id="parentEmail"
+placeholder="Email Address">
 
-<input type="text" placeholder="Occupation">
+<input
+type="text"
+id="parentOccupation"
+placeholder="Occupation">
 
 <textarea
-rows="4"
-placeholder="Address"></textarea>
 
-<select>
-<option>Select Student</option>
-<option>Ahmed Musa</option>
-<option>Fatima Bello</option>
+id="parentAddress"
+
+rows="4"
+
+placeholder="Address">
+
+</textarea>
+
+<select id="parentStudent">
+
+<option value="">
+
+Select Student
+
+</option>
+
+<option>
+
+Ahmed Musa
+
+</option>
+
+<option>
+
+Fatima Bello
+
+</option>
+
 </select>
 
-<button class="save-btn">
+<button
+
+id="saveParentBtn"
+
+class="save-btn">
+
 Save Parent
+
 </button>
 
 <button
+
 class="close-btn"
+
 onclick="closeParentModal()">
+
 Close
+
 </button>
 
 </div>
