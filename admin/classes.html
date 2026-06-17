@@ -214,5 +214,159 @@ row.style.display="none";
 
 </script>
 
+ <script type="module">
+
+import {
+
+addClass,
+
+getClasses
+
+}
+
+from "../firebase/classes.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveClassBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const schoolClass = {
+
+name:
+
+document.getElementById(
+
+"className"
+
+).value,
+
+teacher:
+
+document.getElementById(
+
+"classTeacher"
+
+).value,
+
+room:
+
+document.getElementById(
+
+"classRoom"
+
+).value,
+
+capacity:
+
+document.getElementById(
+
+"classCapacity"
+
+).value
+
+};
+
+const success =
+
+await addClass(
+
+schoolClass
+
+);
+
+if(success){
+
+alert(
+
+"Class added successfully"
+
+);
+
+closeClassModal();
+
+loadClasses();
+
+}
+
+else{
+
+alert(
+
+"Unable to save class"
+
+);
+
+}
+
+});
+
+async function loadClasses(){
+
+const classes =
+
+await getClasses();
+
+const table =
+
+document.getElementById(
+
+"classTable"
+
+);
+
+table.innerHTML = "";
+
+classes.forEach(item => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.name}</td>
+
+<td>${item.teacher}</td>
+
+<td>${item.capacity}</td>
+
+<td>${item.room}</td>
+
+<td>
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadClasses();
+
+</script> 
+
 </body>
 </html>
