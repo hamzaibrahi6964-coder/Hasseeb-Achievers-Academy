@@ -240,7 +240,7 @@ if(confirm("Delete this teacher?")){
 alert("Teacher deleted (Demo)");
 
 }
-
+  
 }
 
 const teacherSearch =
@@ -277,6 +277,203 @@ row.style.display="none";
 });
 
 </script>
+
+  
+<script type="module">
+
+import {
+
+addTeacher,
+
+getTeachers
+
+}
+
+from "../firebase/teachers.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveTeacherBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const teacher = {
+
+name:
+
+document.getElementById(
+
+"teacherName"
+
+).value,
+
+teacherId:
+
+document.getElementById(
+
+"teacherId"
+
+).value,
+
+subject:
+
+document.getElementById(
+
+"teacherSubject"
+
+).value,
+
+phone:
+
+document.getElementById(
+
+"teacherPhone"
+
+).value,
+
+email:
+
+document.getElementById(
+
+"teacherEmail"
+
+).value,
+
+qualification:
+
+document.getElementById(
+
+"teacherQualification"
+
+).value,
+
+status:
+
+"Active"
+
+};
+
+const success =
+
+await addTeacher(
+
+teacher
+
+);
+
+if(success){
+
+alert(
+
+"Teacher added successfully"
+
+);
+
+closeTeacherModal();
+
+loadTeachers();
+
+}
+
+else{
+
+alert(
+
+"Unable to save teacher"
+
+);
+
+}
+
+});
+
+async function loadTeachers(){
+
+const teachers =
+
+await getTeachers();
+
+const table =
+
+document.getElementById(
+
+"teacherTable"
+
+);
+
+table.innerHTML = "";
+
+teachers.forEach(teacher => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>
+
+<img
+
+src="../image/ddr2.jpg"
+
+class="student-avatar">
+
+</td>
+
+<td>${teacher.teacherId}</td>
+
+<td>${teacher.name}</td>
+
+<td>${teacher.subject}</td>
+
+<td>${teacher.phone}</td>
+
+<td>${teacher.email}</td>
+
+<td>
+
+<span class="status-active">
+
+${teacher.status}
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadTeachers();
+
+</script> 
 
 </body>
 </html>
