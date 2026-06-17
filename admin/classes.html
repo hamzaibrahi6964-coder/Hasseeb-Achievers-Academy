@@ -92,42 +92,6 @@ placeholder="Search Class...">
 
 <table class="student-table">
 
-<thead>
-
-<tr>
-<th>Class</th>
-<th>Class Teacher</th>
-<th>Students</th>
-<th>Room</th>
-<th>Actions</th>
-</tr>
-
-</thead>
-
-<tbody id="classTable">
-
-<tr>
-<td>JSS1 A</td>
-<td>Mr. John</td>
-<td>45</td>
-<td>Room 1</td>
-<td>
-<button class="edit-btn">Edit</button>
-<button class="delete-btn">Delete</button>
-</td>
-</tr>
-
-<tr>
-<td>SS2 Science</td>
-<td>Mrs. Aisha</td>
-<td>38</td>
-<td>Room 12</td>
-<td>
-<button class="edit-btn">Edit</button>
-<button class="delete-btn">Delete</button>
-</td>
-</tr>
-
 </tbody>
 
 </table>
@@ -146,26 +110,61 @@ placeholder="Search Class...">
 
 <h3>Add New Class</h3>
 
-<input type="text" placeholder="Class Name">
+<input
+type="text"
+id="className"
+placeholder="Class Name">
 
-<select>
-<option>Select Class Teacher</option>
-<option>Mr. John</option>
-<option>Mrs. Aisha</option>
+<select id="classTeacher">
+
+<option value="">
+
+Select Class Teacher
+
+</option>
+
+<option>
+
+Mr. John
+
+</option>
+
+<option>
+
+Mrs. Aisha
+
+</option>
+
 </select>
 
-<input type="text" placeholder="Room Number">
+<input
+type="text"
+id="classRoom"
+placeholder="Room Number">
 
-<input type="number" placeholder="Class Capacity">
+<input
+type="number"
+id="classCapacity"
+placeholder="Class Capacity">
 
-<button class="save-btn">
+<button
+
+id="saveClassBtn"
+
+class="save-btn">
+
 Save Class
+
 </button>
 
 <button
+
 class="close-btn"
+
 onclick="closeClassModal()">
+
 Close
+
 </button>
 
 </div>
