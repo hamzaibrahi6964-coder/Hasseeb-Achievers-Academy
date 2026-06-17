@@ -269,5 +269,189 @@ row.style.display="none";
 
 </script>
 
+<script type="module">
+
+import {
+
+addParent,
+
+getParents
+
+}
+
+from "../firebase/parents.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveParentBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const parent = {
+
+name:
+
+document.getElementById(
+
+"parentName"
+
+).value,
+
+phone:
+
+document.getElementById(
+
+"parentPhone"
+
+).value,
+
+email:
+
+document.getElementById(
+
+"parentEmail"
+
+).value,
+
+occupation:
+
+document.getElementById(
+
+"parentOccupation"
+
+).value,
+
+address:
+
+document.getElementById(
+
+"parentAddress"
+
+).value,
+
+student:
+
+document.getElementById(
+
+"parentStudent"
+
+).value,
+
+status:
+
+"Active"
+
+};
+
+const success =
+
+await addParent(
+
+parent
+
+);
+
+if(success){
+
+alert(
+
+"Parent added successfully"
+
+);
+
+closeParentModal();
+
+loadParents();
+
+}
+
+else{
+
+alert(
+
+"Unable to save parent"
+
+);
+
+}
+
+});
+
+async function loadParents(){
+
+const parents =
+
+await getParents();
+
+const table =
+
+document.getElementById(
+
+"parentTable"
+
+);
+
+table.innerHTML = "";
+
+parents.forEach(parent => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${parent.name}</td>
+
+<td>${parent.phone}</td>
+
+<td>${parent.email}</td>
+
+<td>${parent.student}</td>
+
+<td>
+
+<span class="status-active">
+
+${parent.status}
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadParents();
+
+</script>  
+
 </body>
 </html>
