@@ -279,7 +279,9 @@ row.style.display="none";
 
 import {
 
-addStudent
+addStudent,
+
+getStudents
 
 }
 
@@ -383,6 +385,88 @@ alert(
 
 });
 
+async function loadStudents(){
+
+const students = await getStudents();
+
+console.log(students);
+
+}
+
+loadStudents();
+
+async function loadStudents(){
+
+const students = await getStudents();
+
+const table = document.getElementById(
+"studentTable"
+);
+
+table.innerHTML = "";
+
+students.forEach(student => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>
+
+<img
+
+src="../image/ddr2.jpg"
+
+class="student-avatar">
+
+</td>
+
+<td>${student.studentId}</td>
+
+<td>${student.name}</td>
+
+<td>${student.class}</td>
+
+<td>${student.gender}</td>
+
+<td>${student.parent}</td>
+
+<td>
+
+<span class="status-active">
+
+${student.status}
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadStudents();
+  
 </script>
   
 </body>
