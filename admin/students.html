@@ -215,48 +215,77 @@ Delete
 
 <h3>Add Student</h3>
 
-<input type="file" accept="image/*">
+<input
+type="file"
+id="studentPhoto"
+accept="image/*">
 
-<input type="text" placeholder="Student Name">
+<input
+type="text"
+id="studentName"
+placeholder="Student Name">
 
-<input type="text" placeholder="Student ID">
+<input
+type="text"
+id="studentId"
+placeholder="Student ID">
 
-<input type="text" placeholder="Class">
+<input
+type="text"
+id="studentClass"
+placeholder="Class">
 
-<select>
-<option>Male</option>
-<option>Female</option>
+<select id="studentGender">
+
+<option value="Male">
+
+Male
+
+</option>
+
+<option value="Female">
+
+Female
+
+</option>
+
 </select>
 
-<input type="text" placeholder="Parent Name">
+<input
+type="text"
+id="parentName"
+placeholder="Parent Name">
 
-<input type="tel" placeholder="Parent Phone Number">
+<input
+type="tel"
+id="parentPhone"
+placeholder="Parent Phone Number">
 
-<button class="save-btn">
+<button
+id="saveStudentBtn"
+
+class="save-btn">
+
 Save Student
+
 </button>
 
-<button class="close-btn" onclick="closeModal()">
+<button
+
+class="close-btn"
+
+onclick="closeModal()">
+
 Close
+
 </button>
 
 </div>
 
+</div>
+
+  
 <script>
-
-function openModal(){
-document.getElementById("studentModal")
-.style.display="flex";
-}
-
-function closeModal(){
-document.getElementById("studentModal")
-.style.display="none";
-}
-
-</script>
-
-  <script>
 
 function openModal(){
 
