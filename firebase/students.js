@@ -39,3 +39,33 @@ return false;
 }
 
 }
+
+import {
+
+getDocs
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
+
+export async function getStudents(){
+
+const snapshot =
+
+await getDocs(
+
+collection(db,"students")
+
+);
+
+return snapshot.docs.map(doc => ({
+
+id: doc.id,
+
+...doc.data()
+
+}));
+
+}
