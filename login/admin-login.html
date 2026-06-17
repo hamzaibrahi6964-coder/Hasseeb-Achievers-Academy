@@ -122,5 +122,58 @@ alert("Invalid Login Details");
 
 </script>
 
+<script type="module">
+
+import { loginAdmin }
+
+from "../firebase/auth.js";
+
+const form = document.getElementById(
+"adminLoginForm"
+);
+
+form.addEventListener(
+"submit",
+
+async function(event){
+
+event.preventDefault();
+
+const email = document.getElementById(
+"adminEmail"
+).value.trim();
+
+const password = document.getElementById(
+"adminPassword"
+).value;
+
+const result = await loginAdmin(
+email,
+password
+);
+
+if(result.success){
+
+alert(
+"Login successful"
+);
+
+window.location.href =
+"../admin/dashboard.html";
+
+}
+
+else{
+
+alert(
+"Invalid email or password."
+);
+
+}
+
+});
+
+</script>
+  
 </body>
 </html>
