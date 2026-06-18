@@ -96,42 +96,63 @@ Generate Result
 <option>JSS3</option>
 </select>
 
-<select>
-<option>Ahmed Musa</option>
-<option>Aisha Ibrahim</option>
-</select>
-
 </div>
 
 <div class="result-form">
 
 <h3>Enter Subject Scores</h3>
+  
+<table class="student-table">
 
+<thead>
+
+<tr>
+
+<th>Student</th>
+
+<th>Class</th>
+
+<th>Subject</th>
+
+<th>Total</th>
+
+<th>Grade</th>
+
+</tr>
+
+</thead>
+
+<tbody id="resultTable">
+
+</tbody>
+
+</table>
+  
 <div class="student-result-info">
 
 <div class="info-box">
 <label>Student Name</label>
-<input type="text" value="Ahmed Musa">
+<input type="text">
 </div>
 
 <div class="info-box">
 <label>Admission No</label>
-<input type="text" value="HAA001">
+<input type="text">
 </div>
 
 <div class="info-box">
 <label>Class</label>
-<input type="text" value="SS2 Science">
+<input type="text">
 </div>
 
 <div class="info-box">
 <label>Session</label>
-<input type="text" value="2025/2026">
+<input type="text">
 </div>
 
 <div class="info-box">
 <label>Term</label>
-<input type="text" value="First Term">
+<input type="text">
 </div>
 
 </div>  
@@ -269,17 +290,6 @@ Keep up the good work
 </div>
 
 </div>
-
-<button
-
-id="saveResultBtn"
-
-class="save-btn">
-
-Save Result
-
-</button>
-
 </div>
 
 </div>
@@ -602,6 +612,8 @@ alert(
 
 closeResultModal();
 
+loadResults();
+
 }
 
 else{
@@ -616,6 +628,48 @@ alert(
 
 });
 
+async function loadResults(){
+
+const results =
+
+await getResults();
+
+const table =
+
+document.getElementById(
+
+"resultTable"
+
+);
+
+table.innerHTML = "";
+
+results.forEach(item => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.student}</td>
+
+<td>${item.class}</td>
+
+<td>${item.subject}</td>
+
+<td>${item.total}</td>
+
+<td>${item.grade}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadResults();
+  
 </script>
   
 </body>
