@@ -86,10 +86,15 @@ CBT Results
 
 <h2>CBT Management</h2>
 
-<button class="add-btn" onclick="openExamModal()">
-+ Create Exam
-</button>
+<button
 
+id="saveExamBtn"
+
+class="save-btn">
+
+Create Exam
+
+</button>
 </div>
 
 <div class="teacher-stats">
@@ -143,40 +148,8 @@ CBT Results
 </tr>
 
 </thead>
-
-<tbody>
-
-<tr>
-
-<td>First Term Mathematics CBT</td>
-
-<td>SS2 Science</td>
-
-<td>Mathematics</td>
-
-<td>50</td>
-
-<td>60 Minutes</td>
-
-<td>
-<span class="status-active">
-Published
-</span>
-</td>
-
-<td>
-
-<button class="edit-btn">
-Questions
-</button>
-
-<button class="delete-btn">
-Delete
-</button>
-
-</td>
-
-</tr>
+  
+<tbody id="examTable">
 
 </tbody>
 
@@ -196,27 +169,49 @@ Delete
 
 <h3>Create CBT Exam</h3>
 
-<input type="text" placeholder="Exam Title">
+<input
 
-<select>
+id="examTitle"
+
+type="text"
+
+placeholder="Exam Title">
+
+<select id="examClass">
 <option>SS1 Science</option>
 <option>SS2 Science</option>
 <option>SS3 Science</option>
 </select>
 
-<select>
+<select id="examSubject">
 <option>Mathematics</option>
 <option>English</option>
 <option>Physics</option>
 <option>Chemistry</option>
 </select>
 
-<input type="number" placeholder="Number of Questions">
+<input
 
-<input type="number" placeholder="Duration (Minutes)">
+id="examQuestions"
 
-<button class="save-btn">
+type="number"
+
+placeholder="Number of Questions">
+
+<input
+
+type="number"
+
+placeholder="Duration (Minutes)">
+
+<button
+
+id="saveExamBtn"
+
+class="save-btn">
+
 Create Exam
+
 </button>
 
 <button
