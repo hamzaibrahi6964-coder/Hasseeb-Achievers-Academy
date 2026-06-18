@@ -310,5 +310,243 @@ event.target.classList.add("active");
 
 </script>
 
+<script type="module">
+
+import {
+
+saveSettings,
+
+getSettings
+
+}
+
+from "../firebase/settings.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveSettingsBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const settings = {
+
+name:
+
+document.getElementById(
+
+"schoolName"
+
+).value,
+
+motto:
+
+document.getElementById(
+
+"schoolMotto"
+
+).value,
+
+address:
+
+document.getElementById(
+
+"schoolAddress"
+
+).value,
+
+phone:
+
+document.getElementById(
+
+"schoolPhone"
+
+).value,
+
+email:
+
+document.getElementById(
+
+"schoolEmail"
+
+).value,
+
+website:
+
+document.getElementById(
+
+"schoolWebsite"
+
+).value,
+
+session:
+
+document.getElementById(
+
+"schoolSession"
+
+).value,
+
+term:
+
+document.getElementById(
+
+"schoolTerm"
+
+).value,
+
+passMark:
+
+document.getElementById(
+
+"passMark"
+
+).value
+
+};
+
+const success =
+
+await saveSettings(
+
+settings
+
+);
+
+if(success){
+
+alert(
+
+"Settings saved successfully"
+
+);
+
+}
+
+else{
+
+alert(
+
+"Unable to save settings"
+
+);
+
+}
+
+});
+
+async function loadSettings(){
+
+const data =
+
+await getSettings();
+
+if(!data){
+
+return;
+
+}
+
+document.getElementById(
+
+"schoolName"
+
+).value =
+
+data.name || "";
+
+
+
+document.getElementById(
+
+"schoolMotto"
+
+).value =
+
+data.motto || "";
+
+
+
+document.getElementById(
+
+"schoolAddress"
+
+).value =
+
+data.address || "";
+
+
+
+document.getElementById(
+
+"schoolPhone"
+
+).value =
+
+data.phone || "";
+
+
+
+document.getElementById(
+
+"schoolEmail"
+
+).value =
+
+data.email || "";
+
+
+
+document.getElementById(
+
+"schoolWebsite"
+
+).value =
+
+data.website || "";
+
+
+
+document.getElementById(
+
+"schoolSession"
+
+).value =
+
+data.session || "";
+
+
+
+document.getElementById(
+
+"schoolTerm"
+
+).value =
+
+data.term || "";
+
+
+
+document.getElementById(
+
+"passMark"
+
+).value =
+
+data.passMark || "";
+
+}
+
+loadSettings();
+
+</script>
+  
 </body>
 </html>
