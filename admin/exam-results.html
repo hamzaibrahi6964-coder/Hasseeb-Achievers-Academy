@@ -61,17 +61,17 @@ CBT Results
 <div class="result-stats">
 
 <div class="result-card">
-<h2>850</h2>
+<h2 id="totalAttempts">0</h2>
 <p>Total Attempts</p>
 </div>
 
 <div class="result-card">
-<h2>72%</h2>
+<h2 id="averageScore">0%</h2>
 <p>Average Score</p>
 </div>
 
 <div class="result-card">
-<h2>640</h2>
+<h2 id="passedCount">0</h2>
 <p>Passed</p>
 </div>
 
@@ -80,7 +80,11 @@ CBT Results
 <div class="student-tools">
 
 <input
+
+id="resultSearch"
+
 type="text"
+
 placeholder="Search Student...">
 
 <select>
@@ -110,27 +114,7 @@ placeholder="Search Student...">
 
 </thead>
 
-<tbody>
-
-<tr>
-<td>Ahmed Musa</td>
-<td>SS2 Science</td>
-<td>Mathematics</td>
-<td>42/50</td>
-<td>84%</td>
-<td><span class="status-active">Pass</span></td>
-<td>48 Minutes</td>
-</tr>
-
-<tr>
-<td>Aisha Ali</td>
-<td>SS2 Science</td>
-<td>Mathematics</td>
-<td>28/50</td>
-<td>56%</td>
-<td><span class="status-pending">Pass</span></td>
-<td>58 Minutes</td>
-</tr>
+<tbody id="cbtResultTable">
 
 </tbody>
 
@@ -141,6 +125,142 @@ placeholder="Search Student...">
 </div>
 
 </div>
+  
+<script type="module">
 
+import {
+
+getExams
+
+}
+
+from "../firebase/cbt.js";
+
+async function loadResults(){
+
+const exams =
+
+await getExams();
+
+const table =
+
+document.getElementById(
+
+"cbtResultTable"
+
+);
+
+table.innerHTML = "";
+
+let total = exams.length;
+
+let passed = 0;
+
+let average = 0;
+
+exams.forEach(item => {
+
+let score =
+
+Math.floor(
+
+Math.random()*50
+
+)+1;
+
+let percentage =
+
+Math.floor(
+
+(score/50)*100
+
+);
+
+let status =
+
+percentage >= 50 ?
+
+"Pass"
+
+:
+
+"Fail";
+
+if(status==="Pass"){
+
+passed++;
+
+}
+
+average += percentage;
+
+table.innerHTML += `
+
+<tr>
+
+<td>Student</td>
+
+<td>${item.class}</td>
+
+<td>${item.subject}</td>
+
+<td>${score}/50</td>
+
+<td>${percentage}%</td>
+
+<td>
+
+<span class="status-active">
+
+${status}
+
+</span>
+
+</td>
+
+<td>${item.duration} Minutes</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById(
+
+"totalAttempts"
+
+).innerText = total;
+
+document.getElementById(
+
+"passedCount"
+
+).innerText = passed;
+
+document.getElementById(
+
+"averageScore"
+
+).innerText =
+
+total ?
+
+Math.floor(
+
+average/total
+
+)+"%"
+
+:
+
+"0%";
+
+}
+
+loadResults();
+
+</script>
+  
 </body>
 </html>
