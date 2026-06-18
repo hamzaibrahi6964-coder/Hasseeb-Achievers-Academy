@@ -65,8 +65,14 @@ Results
 
 <h2>Results Management</h2>
 
-<button class="add-btn">
+<button
+
+class="add-btn"
+
+onclick="openResultModal()">
+
 Generate Result
+
 </button>
 
 </div>
@@ -264,8 +270,14 @@ Keep up the good work
 
 </div>
 
-<button class="save-btn">
+<button
+
+id="saveResultBtn"
+
+class="save-btn">
+
 Save Result
+
 </button>
 
 </div>
@@ -280,5 +292,104 @@ onclick="window.print()">
 Print Result
 </button>
   
+<div
+
+class="modal"
+
+id="resultModal">
+
+<div class="modal-content">
+
+<h3>Generate Student Result</h3>
+
+<select id="resultStudent">
+
+<option value="">
+
+Select Student
+
+</option>
+
+</select>
+
+<input
+
+type="text"
+
+id="resultClass"
+
+placeholder="Class">
+
+<input
+
+type="text"
+
+id="resultSubject"
+
+placeholder="Subject">
+
+<input
+
+type="number"
+
+id="resultCA1"
+
+placeholder="1st CA">
+
+<input
+
+type="number"
+
+id="resultCA2"
+
+placeholder="2nd CA">
+
+<input
+
+type="number"
+
+id="resultAssignment"
+
+placeholder="Assignment">
+
+<input
+
+type="number"
+
+id="resultTest"
+
+placeholder="Test">
+
+<input
+
+type="number"
+
+id="resultExam"
+
+placeholder="Exam">
+
+<button
+
+id="saveResultBtn"
+
+class="save-btn">
+
+Save Result
+
+</button>
+
+<button
+
+class="close-btn"
+
+onclick="closeResultModal()">
+
+Close
+
+</button>
+
+</div>
+
+</div>  
 </body>
 </html>
