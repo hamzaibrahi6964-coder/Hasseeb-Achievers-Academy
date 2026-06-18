@@ -309,7 +309,13 @@ id="resultModal">
 Select Student
 
 </option>
+  
+<option>
 
+Hamza Ibrahim
+
+</option>
+  
 </select>
 
 <input
@@ -390,6 +396,227 @@ Close
 
 </div>
 
-</div>  
+</div> 
+
+<script>
+
+function openResultModal(){
+
+document.getElementById(
+
+"resultModal"
+
+).style.display="flex";
+
+}
+
+function closeResultModal(){
+
+document.getElementById(
+
+"resultModal"
+
+).style.display="none";
+
+}
+
+</script>  
+
+<script type="module">
+
+import {
+
+addResult,
+
+getResults
+
+}
+
+from "../firebase/results.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveResultBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const ca1 = Number(
+
+document.getElementById(
+
+"resultCA1"
+
+).value
+
+);
+
+const ca2 = Number(
+
+document.getElementById(
+
+"resultCA2"
+
+).value
+
+);
+
+const assignment = Number(
+
+document.getElementById(
+
+"resultAssignment"
+
+).value
+
+);
+
+const test = Number(
+
+document.getElementById(
+
+"resultTest"
+
+).value
+
+);
+
+const exam = Number(
+
+document.getElementById(
+
+"resultExam"
+
+).value
+
+);
+
+const total =
+
+ca1 +
+
+ca2 +
+
+assignment +
+
+test +
+
+exam;
+
+let grade = "F";
+
+if(total >= 70){
+
+grade = "A";
+
+}
+
+else if(total >= 60){
+
+grade = "B";
+
+}
+
+else if(total >= 50){
+
+grade = "C";
+
+}
+
+else if(total >= 45){
+
+grade = "D";
+
+}
+
+else if(total >= 40){
+
+grade = "E";
+
+}
+
+const result = {
+
+student:
+
+document.getElementById(
+
+"resultStudent"
+
+).value,
+
+class:
+
+document.getElementById(
+
+"resultClass"
+
+).value,
+
+subject:
+
+document.getElementById(
+
+"resultSubject"
+
+).value,
+
+ca1,
+
+ca2,
+
+assignment,
+
+test,
+
+exam,
+
+total,
+
+grade
+
+};
+
+const success =
+
+await addResult(
+
+result
+
+);
+
+if(success){
+
+alert(
+
+"Result saved successfully"
+
+);
+
+closeResultModal();
+
+}
+
+else{
+
+alert(
+
+"Unable to save result"
+
+);
+
+}
+
+});
+
+</script>
+  
 </body>
 </html>
