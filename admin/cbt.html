@@ -242,5 +242,187 @@ document.getElementById("examModal")
 
 </script>
 
+<script type="module">
+
+import {
+
+addExam,
+
+getExams
+
+}
+
+from "../firebase/cbt.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveExamBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const exam = {
+
+title:
+
+document.getElementById(
+
+"examTitle"
+
+).value,
+
+class:
+
+document.getElementById(
+
+"examClass"
+
+).value,
+
+subject:
+
+document.getElementById(
+
+"examSubject"
+
+).value,
+
+questions:
+
+document.getElementById(
+
+"examQuestions"
+
+).value,
+
+duration:
+
+document.getElementById(
+
+"examDuration"
+
+).value,
+
+status:
+
+"Published"
+
+};
+
+const success =
+
+await addExam(
+
+exam
+
+);
+
+if(success){
+
+alert(
+
+"Exam created successfully"
+
+);
+
+closeExamModal();
+
+loadExams();
+
+}
+
+else{
+
+alert(
+
+"Unable to create exam"
+
+);
+
+}
+
+});
+
+async function loadExams(){
+
+const exams =
+
+await getExams();
+
+const table =
+
+document.getElementById(
+
+"examTable"
+
+);
+
+table.innerHTML = "";
+
+exams.forEach(item => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.title}</td>
+
+<td>${item.class}</td>
+
+<td>${item.subject}</td>
+
+<td>${item.questions}</td>
+
+<td>${item.duration} Minutes</td>
+
+<td>
+
+<span class="status-active">
+
+${item.status}
+
+</span>
+
+</td>
+
+<td>
+
+<button
+
+class="edit-btn">
+
+Questions
+
+</button>
+
+<button
+
+class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadExams();
+
+</script>  
+  
 </body>
 </html>
