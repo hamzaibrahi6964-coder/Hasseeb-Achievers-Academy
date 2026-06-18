@@ -219,32 +219,60 @@ Delete
 
 <h3>Add CBT Question</h3>
 
-<select>
+<select id="questionSubject">
 <option>Mathematics</option>
 <option>English</option>
 <option>Physics</option>
 <option>Chemistry</option>
 </select>
 
-<select>
+<select id="questionClass">
 <option>SS1 Science</option>
 <option>SS2 Science</option>
 <option>SS3 Science</option>
 </select>
 
 <textarea
+
+id="questionText"
+
 placeholder="Enter Question"
+
 rows="4"></textarea>
 
-<input type="text" placeholder="Option A">
+<input
 
-<input type="text" placeholder="Option B">
+id="optionA"
 
-<input type="text" placeholder="Option C">
+type="text"
 
-<input type="text" placeholder="Option D">
+placeholder="Option A">
 
-<select>
+<input
+
+id="optionB"
+
+type="text"
+
+placeholder="Option B">
+
+<input
+
+id="optionC"
+
+type="text"
+
+placeholder="Option C">
+
+<input
+
+id="optionD"
+
+type="text"
+
+placeholder="Option D">
+
+<select id="correctAnswer">
 <option>Correct Answer</option>
 <option>A</option>
 <option>B</option>
@@ -252,8 +280,14 @@ rows="4"></textarea>
 <option>D</option>
 </select>
 
-<button class="save-btn">
+<button
+
+id="saveQuestionBtn"
+
+class="save-btn">
+
 Save Question
+
 </button>
 
 <button
