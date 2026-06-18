@@ -52,8 +52,14 @@ Attendance
 
 <h2>Attendance Management</h2>
 
-<button class="add-btn">
+<button
+
+class="add-btn"
+
+onclick="openAttendanceModal()">
+
 Mark Attendance
+
 </button>
 
 </div>
@@ -110,67 +116,8 @@ placeholder="Search Student...">
 
 </thead>
 
-<tbody>
+<tbody id="attendanceTable">
 
-<tr>
-
-<td>Ahmed Musa</td>
-
-<td>SS2 Science</td>
-
-<td>15/06/2026</td>
-
-<td>
-
-<select class="attendance-status">
-
-<option selected>
-Present
-</option>
-
-<option>
-Absent
-</option>
-
-<option>
-Late
-</option>
-
-</select>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Fatima Bello</td>
-
-<td>JSS3</td>
-
-<td>15/06/2026</td>
-
-<td>
-
-<select class="attendance-status">
-
-<option>
-Present
-</option>
-
-<option selected>
-Absent
-</option>
-
-<option>
-Late
-</option>
-
-</select>
-
-</td>
-
-</tr>
 
 </tbody>
 
@@ -182,5 +129,253 @@ Late
 
 </div>
 
+<div
+
+class="modal"
+
+id="attendanceModal">
+
+<div class="modal-content">
+
+<h3>Mark Attendance</h3>
+
+<select id="attendanceStudent">
+
+<option value="">
+
+Select Student
+
+</option>
+  
+<option>
+
+Hamza Ibrahim
+
+</option>  
+
+</select>
+
+<input
+
+type="text"
+
+id="attendanceClass"
+
+placeholder="Class">
+
+<input
+
+type="date"
+
+id="attendanceDate">
+
+<select id="attendanceStatus">
+
+<option>
+
+Present
+
+</option>
+
+<option>
+
+Absent
+
+</option>
+
+<option>
+
+Late
+
+</option>
+
+</select>
+
+<button
+
+id="saveAttendanceBtn"
+
+class="save-btn">
+
+Save Attendance
+
+</button>
+
+<button
+
+class="close-btn"
+
+onclick="closeAttendanceModal()">
+
+Close
+
+</button>
+
+</div>
+
+</div>  
+
+<script>
+
+function openAttendanceModal(){
+
+document.getElementById(
+
+"attendanceModal"
+
+).style.display="flex";
+
+}
+
+function closeAttendanceModal(){
+
+document.getElementById(
+
+"attendanceModal"
+
+).style.display="none";
+
+}
+
+</script>
+
+<script type="module">
+
+import {
+
+addAttendance,
+
+getAttendance
+
+}
+
+from "../firebase/attendance.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveAttendanceBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const attendance = {
+
+student:
+
+document.getElementById(
+
+"attendanceStudent"
+
+).value,
+
+class:
+
+document.getElementById(
+
+"attendanceClass"
+
+).value,
+
+date:
+
+document.getElementById(
+
+"attendanceDate"
+
+).value,
+
+status:
+
+document.getElementById(
+
+"attendanceStatus"
+
+).value
+
+};
+
+const success =
+
+await addAttendance(
+
+attendance
+
+);
+
+if(success){
+
+alert(
+
+"Attendance saved successfully"
+
+);
+
+closeAttendanceModal();
+
+loadAttendance();
+
+}
+
+else{
+
+alert(
+
+"Unable to save attendance"
+
+);
+
+}
+
+});
+
+async function loadAttendance(){
+
+const records =
+
+await getAttendance();
+
+const table =
+
+document.getElementById(
+
+"attendanceTable"
+
+);
+
+table.innerHTML = "";
+
+records.forEach(item => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.student}</td>
+
+<td>${item.class}</td>
+
+<td>${item.date}</td>
+
+<td>${item.status}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadAttendance();
+
+</script>  
+  
 </body>
 </html>
