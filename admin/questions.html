@@ -149,58 +149,6 @@ placeholder="Search Questions...">
 
 <tbody id="questionTable">
 
-<tr>
-
-<td>Mathematics</td>
-
-<td>SS2 Science</td>
-
-<td>What is 2 + 2 ?</td>
-
-<td>B</td>
-
-<td>
-
-<button class="edit-btn">
-Edit
-</button>
-
-<button
-class="delete-btn"
-onclick="deleteQuestion()">
-Delete
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>English</td>
-
-<td>JSS3</td>
-
-<td>Choose the correct noun.</td>
-
-<td>A</td>
-
-<td>
-
-<button class="edit-btn">
-Edit
-</button>
-
-<button
-class="delete-btn"
-onclick="deleteQuestion()">
-Delete
-</button>
-
-</td>
-
-</tr>
-
 </tbody>
 
 </table>
@@ -361,5 +309,195 @@ row.style.display="none";
 
 </script>
 
+<script type="module">
+
+import {
+
+addQuestion,
+
+getQuestions
+
+}
+
+from "../firebase/questions.js";
+
+const saveBtn =
+
+document.getElementById(
+
+"saveQuestionBtn"
+
+);
+
+saveBtn.addEventListener(
+
+"click",
+
+async function(){
+
+const question = {
+
+subject:
+
+document.getElementById(
+
+"questionSubject"
+
+).value,
+
+class:
+
+document.getElementById(
+
+"questionClass"
+
+).value,
+
+question:
+
+document.getElementById(
+
+"questionText"
+
+).value,
+
+optionA:
+
+document.getElementById(
+
+"optionA"
+
+).value,
+
+optionB:
+
+document.getElementById(
+
+"optionB"
+
+).value,
+
+optionC:
+
+document.getElementById(
+
+"optionC"
+
+).value,
+
+optionD:
+
+document.getElementById(
+
+"optionD"
+
+).value,
+
+answer:
+
+document.getElementById(
+
+"correctAnswer"
+
+).value
+
+};
+
+const success =
+
+await addQuestion(
+
+question
+
+);
+
+if(success){
+
+alert(
+
+"Question saved successfully"
+
+);
+
+closeQuestionModal();
+
+loadQuestions();
+
+}
+
+else{
+
+alert(
+
+"Unable to save question"
+
+);
+
+}
+
+});
+
+async function loadQuestions(){
+
+const questions =
+
+await getQuestions();
+
+const table =
+
+document.getElementById(
+
+"questionTable"
+
+);
+
+table.innerHTML = "";
+
+questions.forEach(item => {
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.subject}</td>
+
+<td>${item.class}</td>
+
+<td>${item.question}</td>
+
+<td>${item.answer}</td>
+
+<td>
+
+<button
+
+class="edit-btn">
+
+Edit
+
+</button>
+
+<button
+
+class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadQuestions();
+
+</script>
+  
 </body>
 </html>
