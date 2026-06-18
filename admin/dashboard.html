@@ -170,25 +170,25 @@ Logout
 <div class="dashboard-card">
 <i class="fa-solid fa-user-graduate"></i>
 <h3>Students</h3>
-<h2>1,250</h2>
+<h2 id="studentCount">0</h2>
 </div>
 
 <div class="dashboard-card">
 <i class="fa-solid fa-chalkboard-user"></i>
 <h3>Teachers</h3>
-<h2>75</h2>
+<h2 id="teacherCount">0</h2>
 </div>
 
 <div class="dashboard-card">
 <i class="fa-solid fa-users"></i>
 <h3>Parents</h3>
-<h2>1,050</h2>
+<h2 id="parentCount">0</h2>
 </div>
 
 <div class="dashboard-card">
 <i class="fa-solid fa-school"></i>
 <h3>Classes</h3>
-<h2>24</h2>
+<h2 id="classCount">0</h2>
 </div>
 
 </div>
@@ -265,8 +265,11 @@ Teacher Attendance Updated
 </tr>
 
 <tr>
+
 <td>Classes</td>
-<h2 id="classCount">0</h2>
+
+<td id="summaryClasses">0</td>
+
 </tr>
 
 <tr>
@@ -303,6 +306,112 @@ window.location.href =
 }
 
 </script>
+
+<script type="module">
+
+import {
+
+getStudents
+
+}
+
+from "../firebase/students.js";
+
+import {
+
+getTeachers
+
+}
+
+from "../firebase/teachers.js";
+
+import {
+
+getParents
+
+}
+
+from "../firebase/parents.js";
+
+import {
+
+getClasses
+
+}
+
+from "../firebase/classes.js";
+
+async function loadDashboard(){
+
+const students =
+
+await getStudents();
+
+const teachers =
+
+await getTeachers();
+
+const parents =
+
+await getParents();
+
+const classes =
+
+await getClasses();
+
+document.getElementById(
+
+"studentCount"
+
+).innerText = students.length;
+
+document.getElementById(
+
+"teacherCount"
+
+).innerText = teachers.length;
+
+document.getElementById(
+
+"parentCount"
+
+).innerText = parents.length;
+
+document.getElementById(
+
+"classCount"
+
+).innerText = classes.length;
+
+document.getElementById(
+
+"summaryStudents"
+
+).innerText = students.length;
+
+document.getElementById(
+
+"summaryTeachers"
+
+).innerText = teachers.length;
+
+document.getElementById(
+
+"summaryParents"
+
+).innerText = parents.length;
+
+document.getElementById(
+
+"summaryClasses"
+
+).innerText = classes.length;
+
+}
+
+loadDashboard();
+
+</script>  
   
 </body>
 </html>
