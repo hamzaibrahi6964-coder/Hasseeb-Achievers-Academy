@@ -54,7 +54,7 @@ Attendance
 </li>
 
 <li>
-<a href="assignment.html">
+<a href="assignments.html">
 <i class="fa-solid fa-book"></i>
 Assignments
 </a>
@@ -98,7 +98,11 @@ Logout
 
 <div class="dashboard-header">
 
-<h2>Welcome, Student</h2>
+<h2 id="studentWelcome">
+
+Welcome Student
+
+</h2>
 
 <p>Academic Session: 2025/2026</p>
 
@@ -138,13 +142,43 @@ Logout
 
 <div class="profile-card">
 
-<img src="../image/ddr2.jpg" alt="Student">
+<img
 
-<h3>Student Name</h3>
+id="studentPhoto"
 
-<p>Class: SS2 Science</p>
+src="../image/ddr2.jpg"
 
-<p>ID: HAA2026001</p>
+alt="Student">
+
+<h3 id="studentName">
+
+Student Name
+
+</h3>
+
+<p>
+
+Class:
+
+<span id="studentClass">
+
+SS2 Science
+
+</span>
+
+</p>
+
+<p>
+
+ID:
+
+<span id="studentId">
+
+HAA2026001
+
+</span>
+
+</p>
 
 </div>
 
@@ -156,17 +190,29 @@ Logout
 
 <tr>
 <td>Full Name</td>
-<td>Demo Student</td>
+<td id="fullName">
+
+Demo Student
+
+</td>
 </tr>
 
 <tr>
 <td>Class</td>
-<td>SS2 Science</td>
+<td id="fullClass">
+
+SS2 Science
+
+</td>
 </tr>
 
 <tr>
 <td>Gender</td>
-<td>Male</td>
+<td id="fullGender">
+
+Male
+
+</td>
 </tr>
 
 <tr>
@@ -176,7 +222,11 @@ Logout
 
 <tr>
 <td>Parent</td>
-<td>Demo Parent</td>
+<td id="fullParent">
+
+Demo Parent
+
+</td>
 </tr>
 
 </table>
@@ -218,6 +268,113 @@ console.log("Student Dashboard Loaded");
 });
 
 </script>
+
+<script type="module">
+
+import {
+
+getStudents
+
+}
+
+from "../firebase/students.js";
+
+async function loadStudent(){
+
+const students =
+
+await getStudents();
+
+if(
+
+students.length === 0
+
+){
+
+return;
+
+}
+
+/*
+Temporary:
+
+Take first student
+inside Firebase
+*/
+
+const student =
+
+students[0];
+
+document.getElementById(
+
+"studentWelcome"
+
+).innerHTML =
+
+`Welcome, ${student.name}`;
+
+document.getElementById(
+
+"studentName"
+
+).innerText =
+
+student.name;
+
+document.getElementById(
+
+"studentClass"
+
+).innerText =
+
+student.class;
+
+document.getElementById(
+
+"studentId"
+
+).innerText =
+
+student.studentId;
+
+document.getElementById(
+
+"fullName"
+
+).innerText =
+
+student.name;
+
+document.getElementById(
+
+"fullClass"
+
+).innerText =
+
+student.class;
+
+document.getElementById(
+
+"fullGender"
+
+).innerText =
+
+student.gender;
+
+document.getElementById(
+
+"fullParent"
+
+).innerText =
+
+student.parent;
+
+}
+
+loadStudent();
+
+</script>  
 
 </body>
 </html>
