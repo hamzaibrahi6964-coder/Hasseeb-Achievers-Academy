@@ -162,12 +162,16 @@ Save Changes
 <div class="profile-image">
 
 <img
-src="../image/ddr2.jpg"
-id="previewImage">
 
+id="previewImage"
+
+src="../image/ddr2.jpg">
 <input
+
 type="file"
-id="studentPhoto"
+
+id="profilePhoto"
+
 onchange="previewPhoto(event)">
 
 </div>
@@ -175,23 +179,35 @@ onchange="previewPhoto(event)">
 <div class="profile-form">
 
 <input
-type="text"
-value="Ahmed Musa"
-placeholder="Student Name">
 
-<input
+id="profileName"
+
 type="text"
-value="ADM001"
+
+placeholder="Student Name">
+  
+<input
+
+id="profileId"
+
+type="text"
+
 placeholder="Admission Number">
 
 <input
+
+id="profileClass"
+
 type="text"
-value="JSS1 A"
+
 placeholder="Class">
 
 <input
+
+id="profileGender"
+
 type="text"
-value="Male"
+
 placeholder="Gender">
 
 <input
@@ -203,18 +219,27 @@ value="08012345678"
 placeholder="Phone Number">
 
 <input
-type="text"
-value="Mr Musa Ahmed"
-placeholder="Parent Name">
 
-<input
+id="profileParent"
+
 type="text"
-value="08098765432"
+
+placeholder="Parent Name">
+  
+<input
+
+id="profileParentPhone"
+
+type="text"
+
 placeholder="Parent Phone">
 
 <input
+
+id="profileEmail"
+
 type="email"
-value="student@school.com"
+
 placeholder="Email">
 
 <hr>
@@ -241,41 +266,131 @@ placeholder="Confirm Password">
 
 </div>
 
-<script>
+<script type="module">
 
-function saveProfile(){
+import {
 
-alert(
-"Profile Updated Successfully!"
-);
+getStudents
 
 }
 
-function previewPhoto(event){
+from "../firebase/students.js";
 
-let image =
+async function loadProfile(){
+
+const students =
+
+await getStudents();
+
+if(
+
+students.length===0
+
+){
+
+return;
+
+}
+
+const student =
+
+students[0];
 
 document.getElementById(
-"previewImage"
-);
 
-image.src =
+"profileName"
+
+).value =
+
+student.name || "";
+
+
+
+document.getElementById(
+
+"profileId"
+
+).value =
+
+student.studentId || "";
+
+
+
+document.getElementById(
+
+"profileClass"
+
+).value =
+
+student.class || "";
+
+
+
+document.getElementById(
+
+"profileGender"
+
+).value =
+
+student.gender || "";
+
+
+
+document.getElementById(
+
+"profileParent"
+
+).value =
+
+student.parent || "";
+
+}
+
+loadProfile();
+
+window.previewPhoto =
+
+function(event){
+
+document.getElementById(
+
+"previewImage"
+
+).src =
 
 URL.createObjectURL(
+
 event.target.files[0]
+
 );
 
 }
 
-function logoutStudent(){
+window.saveProfile =
 
-let answer = confirm(
+function(){
+
+alert(
+
+"Profile Updated"
+
+);
+
+}
+
+window.logoutStudent =
+
+function(){
+
+if(
+
+confirm(
 
 "Are you sure you want to logout?"
 
-);
+)
 
-if(answer){
+){
 
 window.location.href =
 
