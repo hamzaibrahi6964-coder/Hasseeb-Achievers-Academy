@@ -186,7 +186,11 @@ Download Report Card
 
 <div class="teacher-stat-card">
 
-<h2>82%</h2>
+<h2 id="averageScore">
+
+0%
+
+</h2>
 
 <p>Average Score</p>
 
@@ -194,7 +198,11 @@ Download Report Card
 
 <div class="teacher-stat-card">
 
-<h2>5th</h2>
+<h2 id="classPosition">
+
+-
+
+</h2>
 
 <p>Class Position</p>
 
@@ -202,7 +210,11 @@ Download Report Card
 
 <div class="teacher-stat-card">
 
-<h2>A</h2>
+<h2 id="overallGrade">
+
+-
+
+</h2>
 
 <p>Overall Grade</p>
 
@@ -232,67 +244,8 @@ Download Report Card
 
 </thead>
 
-<tbody>
+<tbody id="studentResultsTable">
 
-<tr>
-
-<td>Mathematics</td>
-
-<td>95</td>
-
-<td>A</td>
-
-<td>Excellent</td>
-
-</tr>
-
-<tr>
-
-<td>English</td>
-
-<td>82</td>
-
-<td>A</td>
-
-<td>Excellent</td>
-
-</tr>
-
-<tr>
-
-<td>Physics</td>
-
-<td>78</td>
-
-<td>B</td>
-
-<td>Very Good</td>
-
-</tr>
-
-<tr>
-
-<td>Chemistry</td>
-
-<td>74</td>
-
-<td>B</td>
-
-<td>Very Good</td>
-
-</tr>
-
-<tr>
-
-<td>Biology</td>
-
-<td>85</td>
-
-<td>A</td>
-
-<td>Excellent</td>
-
-</tr>
 
 </tbody>
 
@@ -306,9 +259,13 @@ Download Report Card
 
 <h3>Teacher's Remark</h3>
 
-<div class="activity-box">
+<div
 
-Excellent performance. Keep up the hard work.
+class="activity-box"
+
+id="teacherRemark">
+
+No Remark
 
 </div>
 
@@ -320,9 +277,15 @@ Excellent performance. Keep up the hard work.
 
 <h3>Principal's Remark</h3>
 
-<div class="activity-box">
+<div
 
-Outstanding academic performance this term.
+class="activity-box"
+
+id="principalRemark">
+
+No Remark
+
+</div>
 
 </div>
 
@@ -330,19 +293,231 @@ Outstanding academic performance this term.
 
 </div>
 
-</div>
+<script type="module">
 
-<script>
+import {
 
-function logoutStudent(){
+getResults
 
-let answer = confirm(
+}
 
-"Are you sure you want to logout?"
+from "../firebase/results.js";
+
+async function loadResults(){
+
+const results =
+
+await getResults();
+
+const table =
+
+document.getElementById(
+
+"studentResultsTable"
 
 );
 
-if(answer){
+table.innerHTML = "";
+
+if(
+
+results.length===0
+
+){
+
+return;
+
+}
+
+let totalScore = 0;
+
+let overall = "F";
+
+results.forEach(item=>{
+
+totalScore +=
+
+item.total;
+
+let remark =
+
+"Needs Improvement";
+
+if(
+
+item.grade==="A"
+
+){
+
+remark =
+
+"Excellent";
+
+}
+
+else if(
+
+item.grade==="B"
+
+){
+
+remark =
+
+"Very Good";
+
+}
+
+else if(
+
+item.grade==="C"
+
+){
+
+remark =
+
+"Good";
+
+}
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.subject}</td>
+
+<td>${item.total}</td>
+
+<td>${item.grade}</td>
+
+<td>${remark}</td>
+
+</tr>
+
+`;
+
+});
+
+const average =
+
+Math.round(
+
+totalScore /
+
+results.length
+
+);
+
+if(
+
+average>=70
+
+){
+
+overall="A";
+
+}
+
+else if(
+
+average>=60
+
+){
+
+overall="B";
+
+}
+
+else if(
+
+average>=50
+
+){
+
+overall="C";
+
+}
+
+else if(
+
+average>=45
+
+){
+
+overall="D";
+
+}
+
+else if(
+
+average>=40
+
+){
+
+overall="E";
+
+}
+
+document.getElementById(
+
+"averageScore"
+
+).innerText =
+
+average + "%";
+
+document.getElementById(
+
+"overallGrade"
+
+).innerText =
+
+overall;
+
+/*
+Temporary
+*/
+
+document.getElementById(
+
+"classPosition"
+
+).innerText =
+
+"-";
+
+document.getElementById(
+
+"teacherRemark"
+
+).innerText =
+
+"Excellent Performance";
+
+document.getElementById(
+
+"principalRemark"
+
+).innerText =
+
+"Keep up the good work";
+
+}
+
+loadResults();
+
+window.logoutStudent =
+
+function(){
+
+if(
+
+confirm(
+
+"Are you sure you want to logout?"
+
+)
+
+){
 
 window.location.href =
 
@@ -353,7 +528,7 @@ window.location.href =
 }
 
 </script>
-
+  
 </body>
 
 </html>
