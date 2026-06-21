@@ -155,7 +155,11 @@ Logout
 
 <div class="teacher-stat-card">
 
-<h2>92%</h2>
+<h2 id="attendanceRate">
+
+0%
+
+</h2>
 
 <p>Attendance Rate</p>
 
@@ -163,15 +167,23 @@ Logout
 
 <div class="teacher-stat-card">
 
-<h2>110</h2>
+<h2 id="presentDays">
 
+0
+
+</h2>
+  
 <p>Present Days</p>
 
 </div>
 
 <div class="teacher-stat-card">
 
-<h2>6</h2>
+<h2 id="absentDays">
+
+0
+
+</h2>
 
 <p>Absent Days</p>
 
@@ -179,7 +191,11 @@ Logout
 
 <div class="teacher-stat-card">
 
-<h2>2</h2>
+<h2 id="lateDays">
+
+0
+
+</h2>
 
 <p>Late Days</p>
 
@@ -206,80 +222,8 @@ Logout
 </tr>
 
 </thead>
-
-<tbody>
-
-<tr>
-
-<td>15 June 2026</td>
-
-<td>Monday</td>
-
-<td>
-
-<span class="present-badge">
-
-Present
-
-</span>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>16 June 2026</td>
-
-<td>Tuesday</td>
-
-<td>
-
-<span class="present-badge">
-
-Present
-
-</span>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>17 June 2026</td>
-
-<td>Wednesday</td>
-
-<td>
-
-<span class="absent-badge">
-
-Absent
-
-</span>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>18 June 2026</td>
-
-<td>Thursday</td>
-
-<td>
-
-<span class="late-badge">
-
-Late
-
-</span>
-
-</td>
-
-</tr>
+  
+<tbody id="studentAttendanceTable">
 
 </tbody>
 
@@ -305,17 +249,205 @@ Excellent attendance performance.
 
 </div>
 
-<script>
+<script type="module">
 
-function logoutStudent(){
+import {
 
-let answer = confirm(
+getAttendance
 
-"Are you sure you want to logout?"
+}
+
+from "../firebase/attendance.js";
+
+async function loadAttendance(){
+
+const records =
+
+await getAttendance();
+
+const table =
+
+document.getElementById(
+
+"studentAttendanceTable"
 
 );
 
-if(answer){
+table.innerHTML = "";
+
+let present = 0;
+
+let absent = 0;
+
+let late = 0;
+
+records.forEach(item=>{
+
+if(
+
+item.status==="Present"
+
+){
+
+present++;
+
+}
+
+else if(
+
+item.status==="Absent"
+
+){
+
+absent++;
+
+}
+
+else if(
+
+item.status==="Late"
+
+){
+
+late++;
+
+}
+
+let badge =
+
+"present-badge";
+
+if(
+
+item.status==="Absent"
+
+){
+
+badge="absent-badge";
+
+}
+
+if(
+
+item.status==="Late"
+
+){
+
+badge="late-badge";
+
+}
+
+const day =
+
+new Date(
+
+item.date
+
+).toLocaleDateString(
+
+"en-US",
+
+{
+
+weekday:"long"
+
+}
+
+);
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.date}</td>
+
+<td>${day}</td>
+
+<td>
+
+<span class="${badge}">
+
+${item.status}
+
+</span>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+const total =
+
+present +
+
+absent +
+
+late;
+
+let rate = 0;
+
+if(total>0){
+
+rate = Math.round(
+
+(present/total)*100
+
+);
+
+}
+
+document.getElementById(
+
+"attendanceRate"
+
+).innerText =
+
+rate + "%";
+
+document.getElementById(
+
+"presentDays"
+
+).innerText =
+
+present;
+
+document.getElementById(
+
+"absentDays"
+
+).innerText =
+
+absent;
+
+document.getElementById(
+
+"lateDays"
+
+).innerText =
+
+late;
+
+}
+
+loadAttendance();
+
+window.logoutStudent =
+
+function(){
+
+if(
+
+confirm(
+
+"Are you sure you want to logout?"
+
+)
+
+){
 
 window.location.href =
 
