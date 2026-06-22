@@ -288,6 +288,78 @@ window.location.href =
 
 </script>
 
+<script type="module">
+
+import {
+
+getAssignments
+
+}
+
+from "../firebase/assignments.js";
+
+async function loadAssignments(){
+
+const assignments =
+
+await getAssignments();
+
+const table =
+
+document.getElementById(
+
+"assignmentTable"
+
+);
+
+table.innerHTML="";
+
+assignments.forEach(item=>{
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.subject}</td>
+
+<td>${item.title}</td>
+
+<td>${item.dueDate}</td>
+
+<td>
+
+<span class="pending-badge">
+
+${item.status}
+
+</span>
+
+</td>
+
+<td>
+
+<button
+
+class="download-btn">
+
+Download
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+loadAssignments();
+
+</script>
+  
 </body>
 
 </html>
