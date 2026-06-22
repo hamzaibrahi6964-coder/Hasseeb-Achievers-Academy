@@ -203,100 +203,7 @@ Logout
 
 </thead>
 
-<tbody>
-
-<tr>
-
-<td>Mathematics</td>
-
-<td>Algebra Exercise</td>
-
-<td>20 June 2026</td>
-
-<td>
-
-<span class="pending-badge">
-
-Pending
-
-</span>
-
-</td>
-
-<td>
-
-<button
-class="download-btn">
-
-Download
-
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>English</td>
-
-<td>Essay Writing</td>
-
-<td>22 June 2026</td>
-
-<td>
-
-<span class="completed-badge">
-
-Completed
-
-</span>
-
-</td>
-
-<td>
-
-<button
-class="download-btn">
-
-Download
-
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Physics</td>
-
-<td>Motion Questions</td>
-
-<td>25 June 2026</td>
-
-<td>
-
-<span class="pending-badge">
-
-Pending
-
-</span>
-
-</td>
-
-<td>
-
-<button
-class="download-btn">
-
-Download
-
-</button>
-
-</td>
-
-</tr>
+<tbody id="assignmentTable">
 
 </tbody>
 
@@ -311,9 +218,11 @@ Download
 <h3>Submit Assignment</h3>
 
 <input
-type="file"
-class="assignment-upload">
+id="assignmentUpload"
 
+type="file"
+
+class="assignment-upload">
 <button
 class="save-btn"
 onclick="submitAssignment()">
@@ -332,14 +241,33 @@ Submit Assignment
 
 function submitAssignment(){
 
+const file =
+
+document.getElementById(
+
+"assignmentUpload"
+
+).files[0];
+
+if(!file){
+
 alert(
 
-"Assignment Submitted Successfully"
+"Please select a file"
+
+);
+
+return;
+
+}
+
+alert(
+
+"Assignment submitted"
 
 );
 
 }
-
 function logoutStudent(){
 
 let answer = confirm(
